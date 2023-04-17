@@ -18,7 +18,7 @@ const Doctors = () => {
                     <div class="xl:flex lg:flex md:flex sm:flex flex-wrap justify-between pt-20">
                         <div class="xl:w-4/12 bg-blue-400 p-5 lg:w-2/4 md:w-2/5 sm:w-2/5 max-w-sm mb-8 rounded-md">
                             <div class="w-full rounded h-56">
-                                <img src="https://cdn.tuk.dev/assets/photo-1575978108872-9b1429a19a0f.jfif" alt="Display picture of Silene Tokyo" role="img" class="object-cover h-full w-full overflow-hidden rounded shadow" />
+                                <img src="https://cdn.tuk.dev/assets/photo-1575978108872-9b1429a19a0f.jfif" alt="Display picture of Silene Tokyo" role="img" class="object-cover h-56 w-56 mx-auto overflow-hidden rounded shadow rounded-full" />
                             </div>
                             <div class="pt-6 text-center">
                                 <p class="text-2xl font-semibold text-gray-800 dark:text-white ">Dr. Silene Tokyo</p>

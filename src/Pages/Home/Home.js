@@ -6,6 +6,8 @@ import Subscribe from './Subscribe/Subscribe';
 import Experience from './Experience/Experience';
 import Doctors from './Doctors/Doctors';
 import Testimonials from './Testimonials/Testimonials';
+import BannerTwo from './BannerTwo/BannerTwo';
+import Trust from './Trust/Trust';
 
 const Home = () => {
     return (
@@ -15,6 +17,8 @@ const Home = () => {
            <Experience/>
            <Surgon/>
            <Doctors/>
+           <BannerTwo/>
+           <Trust/>
            <Testimonials/>
            <Subscribe/>
         </div>
