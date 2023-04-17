@@ -3,7 +3,7 @@ import ButtonTwo from '../../../components/Button/ButtonTwo/ButtonTwo';
 
 const BannerTwo = () => {
     return (
-        <div className='lg:flex items-center justify-around mb-9 bg-purple-300 p-5'>
+        <div className='lg:flex items-center justify-around mb-9 bg-purple-300 p-5 lg:p-0'>
         <div>
             <img src="https://i.ibb.co/xz7dfm6/banner-Two.png" alt="" />
         </div>
