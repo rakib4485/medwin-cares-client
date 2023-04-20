@@ -11,7 +11,7 @@ import Trust from './Trust/Trust';
 
 const Home = () => {
     return (
-        <div>
+        <div className='lg:w-[1380px] mx-auto'>
            <Banner/>
            <Expertise/>
            <Experience/>
