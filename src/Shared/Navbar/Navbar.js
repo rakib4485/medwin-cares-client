@@ -40,22 +40,22 @@ const Navbar = () => {
                             </Link>
                             <ul className="hidden w-8/12 md:flex items-center justify-center space-x-8">
                                 <li>
-                                    <Link to='/' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
+                                    <Link to='/' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:px-3 hover:underline">
                                         Home
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/appointment' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
+                                    <Link to='/appointment' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:px-3 focus:ring-gray-800 hover:underline">
                                         Appointment
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/about' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
+                                    <Link to='/about' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:px-3 focus:ring-gray-800 hover:underline">
                                         About Us
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/contact' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">
+                                    <Link to='/contact' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 focus:px-3 hover:underline">
                                         Contact
                                     </Link>
                                 </li>
