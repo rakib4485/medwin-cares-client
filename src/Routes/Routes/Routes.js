@@ -6,6 +6,8 @@ import About from "../../Pages/About/About";
 import Contact from "../../Pages/Contact/Contact";
 import Login from "../../Pages/Login/Login";
 import AuthLayout from "../../Layout/AuthLayout/AuthLayout";
+import Error from "../../Pages/Error/Error";
+import SignUp from "../../Pages/SignUp/SignUp";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +47,20 @@ const router = createBrowserRouter([
                 element: <Login/>
             }
         ]
+    }, 
+    {
+        path: '/signup',
+        element: <AuthLayout/>,
+        children: [
+            {
+                path: '/signup',
+                element: <SignUp/>
+            }
+        ]
+    }, 
+    {
+        path: '*',
+        element: <Error/>
     }
 ])
 
