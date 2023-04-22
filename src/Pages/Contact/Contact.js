@@ -37,6 +37,7 @@ const Contact = () => {
                 </div>
               
             </div>
+            <hr />
             <div className='lg:flex items-center my-12 mx-5'>
                 <div className='mb-5 lg:mb-0'>
                 <h1 className='text-6xl font-bold'>Can't find what you need?</h1>
