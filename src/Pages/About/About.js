@@ -19,10 +19,10 @@ const About = () => {
                     <div className='grid grid-cols-1 lg:grid-cols-2 lg:mx-5 mt-6'>
                         <div className='text-black lg:w-2/3 bg-blue-200 py-16 px-5 lg:text-justify rounded-2xl'>
                             <p className='text-3xl'>"Our mission is to improve the health of our community by providing high quality, comprehensive medical care in a welcoming & compassionate environment."</p>
-                            <div className='mt-3'>
+                            <div className='mt-3 flex items-center gap-2'>
                                 <div>
                                     {/* doctor image  */}
-                                    <img src="" alt="" />
+                                    <img className='w-14 h-14 rounded-full' src="https://i.ibb.co/PMMn1D9/best3.jpg" alt="" />
                                 </div>
                                 <div>
                                     <p className='text-lg font-semibold'>Dr. Jhon Abraham</p>
