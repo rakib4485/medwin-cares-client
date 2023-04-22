@@ -1,6 +1,8 @@
 import React from 'react';
 import { HiLocationMarker } from 'react-icons/hi';
 import { HiEnvelope, HiPhone } from "react-icons/hi2";
+import { FaFacebook, FaInstagram, FaTwitterSquare, FaLinkedinIn, FaYoutube } from "react-icons/fa";
+import { Link } from 'react-router-dom';
 
 const Contact = () => {
     return (
@@ -59,6 +61,36 @@ const Contact = () => {
                         <button className='uppercase bg-purple-400 px-4 py-3 text-white'>Submit</button>
                     </form>
                 </div>
+            </div>
+            <div className='bg-black py-5'>
+                <div className='flex items-center my-5 text-3xl justify-center gap-5'>
+                    <div className='bg-white p-2 rounded-full hover:bg-black hover:text-white borders'>
+                        <Link>
+                        <FaFacebook/>
+                        </Link>
+                    </div>
+                    <div className='bg-white p-2 rounded-full hover:bg-black hover:text-white borders'>
+                        <Link>
+                        <FaInstagram/>
+                        </Link>
+                    </div>
+                    <div className='bg-white p-2 rounded-full hover:bg-black hover:text-white borders'>
+                        <Link>
+                        <FaTwitterSquare/>
+                        </Link>
+                    </div>
+                    <div className='bg-white p-2 rounded-full hover:bg-black hover:text-white borders'>
+                        <Link>
+                        <FaLinkedinIn/>
+                        </Link>
+                    </div>
+                    <div className='bg-white p-2 rounded-full hover:bg-black hover:text-white borders' style={{}}>
+                        <Link>
+                        <FaYoutube/>
+                        </Link>
+                    </div>
+                </div>
+                <p className="text-center text-white">@copyright all rights reserved to Medwin Cares 2023</p>
             </div>
         </div>
     );

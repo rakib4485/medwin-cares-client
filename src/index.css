@@ -22,3 +22,10 @@ code {
 .banner-text{
   font-family: 'Josefin Sans', sans-serif;
 }
+
+.borders{
+  border: 3px solid;
+}
+.borders:hover{
+  border: 3px solid white;
+}

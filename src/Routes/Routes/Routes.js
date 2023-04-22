@@ -5,6 +5,7 @@ import Appointment from "../../Pages/Appointment/Appointment";
 import About from "../../Pages/About/About";
 import Contact from "../../Pages/Contact/Contact";
 import Login from "../../Pages/Login/Login";
+import AuthLayout from "../../Layout/AuthLayout/AuthLayout";
 
 const router = createBrowserRouter([
     {
@@ -22,11 +23,23 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About/>
-            },
+            }
+        ]
+    }, 
+    {
+        path: '/contact',
+        element: <AuthLayout/>,
+        children: [
             {
                 path: '/contact',
                 element: <Contact/>
-            },
+            }
+        ]
+    },
+    {
+        path: '/login',
+        element: <AuthLayout/>,
+        children: [
             {
                 path: '/login',
                 element: <Login/>
