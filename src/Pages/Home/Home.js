@@ -3,6 +3,8 @@ import Hero from './Hero/Hero';
 import Option from './Option/Option';
 import AboutHome from './About/AboutHome';
 import Department from './Department/Department';
+import Choose from './Choose/Choose';
+import Specialist from './Specialist/Specialist';
 
 const Home = () => {
     return (
@@ -11,6 +13,8 @@ const Home = () => {
            <Option/>
            <AboutHome/>
            <Department/>
+           <Choose/>
+           <Specialist/>
         </div>
     );
 };
