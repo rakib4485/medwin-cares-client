@@ -1,26 +1,16 @@
 import React from 'react';
-import Banner from './Banner/Banner';
-import Expertise from './Expertise/Expertise';
-import Surgon from './Surgon/Surgon';
-import Subscribe from './Subscribe/Subscribe';
-import Experience from './Experience/Experience';
-import Doctors from './Doctors/Doctors';
-import Testimonials from './Testimonials/Testimonials';
-import BannerTwo from './BannerTwo/BannerTwo';
-import Trust from './Trust/Trust';
+import Hero from './Hero/Hero';
+import Option from './Option/Option';
+import AboutHome from './About/AboutHome';
+import Department from './Department/Department';
 
 const Home = () => {
     return (
         <div className='lg:w-[1380px] mx-auto'>
-           <Banner/>
-           <Expertise/>
-           <Experience/>
-           <Surgon/>
-           <Doctors/>
-           <BannerTwo/>
-           <Trust/>
-           <Testimonials/>
-           <Subscribe/>
+           {/* <Hero/> */}
+           <Option/>
+           <AboutHome/>
+           <Department/>
         </div>
     );
 };

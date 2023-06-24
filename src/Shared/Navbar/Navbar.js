@@ -45,8 +45,8 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/appointment' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:px-3 focus:ring-gray-800 hover:underline">
-                                        Appointment
+                                    <Link to='/doctors' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:px-3 focus:ring-gray-800 hover:underline">
+                                        Doctors
                                     </Link>
                                 </li>
                                 <li>
@@ -100,8 +100,8 @@ const Navbar = () => {
                                     </Link>
                                 </li>
                                 <li>
-                                    <Link to='/appointment' className="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
-                                        Appointment
+                                    <Link to='/doctors' className="dark:text-white flex items-center justify-between hover:underline text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800">
+                                        Doctors
                                         <div>
                                             <svg className="fill-stroke text-black dark:text-white" width={12} height={12} viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M4.5 3L7.5 6L4.5 9" stroke="currentColor" strokeWidth="0.75" strokeLinecap="round" strokeLinejoin="round" />
