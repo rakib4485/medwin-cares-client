@@ -4,13 +4,8 @@ import { HiOutlineArrowRightCircle, HiUserGroup, HiIdentification, HiBookmark, H
 
 const About = () => {
     return (
-        <div className='my-5'>
-            <div className='text-center'>
-                <p className='uppercase text-2xl'>Expert medical treatment</p>
-                <h1 className='text-5xl font-semibold'>Our team help you get your <br /> life back on track.</h1>
-            </div>
-            <div className='mt-10 bg-blue-600 pb-28'>
-                <img  className='' src="https://i.ibb.co/jVJdHmb/about-heading.jpg" alt="" />
+        <div className='my-5 lg:w-[1380px] mx-auto'>
+            <div className='mt-10 bg-blue-600 pt-10 pb-28'>
                 <div className='mt-6 text-white mx-4 lg:mx-0'>
                     <div className="text-center">
                         <p className='uppercase text-2xl'>best medical treatment</p>
@@ -87,7 +82,7 @@ const About = () => {
                 </div>
             </div>
             {/* mission  */}
-            <div className='grid grid-cols-1 lg:grid-cols-2 mx-5 my-14'>
+            {/* <div className='grid grid-cols-1 lg:grid-cols-2 mx-5 my-14'>
                 <div className=''>
                     <img className='rounded-3xl w-[90%]' src="https://i.ibb.co/gJLm5vC/mission.jpg" alt="" />
                 </div>
@@ -99,6 +94,23 @@ const About = () => {
                 <p className='mt-3'>Our missions to improve the health of our community by providing high quality medical care in a welcoming & compassionate environment.</p>
                 </div>
                 </div>
+            </div> */}
+            <div className='text-white lg:flex'>
+                <div className='bg-blue-700'>
+                    <div className="mx-6 py-5">
+                    <h1 className='text-4xl font-semibold'>Our Vision</h1>
+                    <p className='text-justify mt-3'>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Sed porttitor lectus nibh. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta.</p>
+                    </div>
+                </div>
+                <div className='bg-gray-900'>
+                   <div className="mx-6 py-5">
+                   <h1 className='text-4xl font-semibold'>Our Mission</h1>
+                    <p className='text-justify mt-3'>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Sed porttitor lectus nibh. Nulla quis lorem ut libero malesuada feugiat. Sed porttitor lectus nibh. Sed porttitor lectus nibh. Cras ultricies ligula sed magna dictum porta.</p>
+                   </div>
+                </div>
+            </div>
+            <div>
+
             </div>
             {/* booking area  */}
             <div className='lg:flex justify-around lg:w-[980px] mx-auto my-14 bg-green-100 p-5 items-center'>

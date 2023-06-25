@@ -7,9 +7,7 @@ import { Link } from 'react-router-dom';
 const Contact = () => {
     return (
         <div>
-            <div className='text-center my-5 bg-black p-8 text-white' style={{borderTopLeftRadius: "70px", borderBottomRightRadius: "70px"}}>
-                <h1 className='text-6xl font-semibold'>We'd love to hear from you</h1>
-            </div>
+            <div className='lg:w-[1380px] mx-auto'>
             <div className='my-5'>
                 <p className='uppercase mb-2 ml-28 font-semibold'>have a question</p>
                 <div className='grid grid-cols-1 lg:grid-cols-3 w-3/4 mx-auto'>
@@ -62,6 +60,7 @@ const Contact = () => {
                         <button className='uppercase bg-purple-400 px-4 py-3 text-white'>Submit</button>
                     </form>
                 </div>
+            </div>
             </div>
             <div className='bg-black py-5'>
                 <div className='flex items-center my-5 text-3xl justify-center gap-5'>

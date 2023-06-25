@@ -5,16 +5,20 @@ import AboutHome from './About/AboutHome';
 import Department from './Department/Department';
 import Choose from './Choose/Choose';
 import Specialist from './Specialist/Specialist';
+import Solution from './Solution/Solution';
+import Booking from './Booking/Booking';
 
 const Home = () => {
     return (
-        <div className='lg:w-[1380px] mx-auto'>
+        <div className=''>
            {/* <Hero/> */}
            <Option/>
            <AboutHome/>
            <Department/>
            <Choose/>
            <Specialist/>
+           <Solution/>
+           <Booking/>
         </div>
     );
 };
