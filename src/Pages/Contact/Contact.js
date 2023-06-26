@@ -3,10 +3,38 @@ import { HiLocationMarker } from 'react-icons/hi';
 import { HiEnvelope, HiPhone } from "react-icons/hi2";
 import { FaFacebook, FaInstagram, FaTwitterSquare, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import intro from '../../assests/intro.jpg'
 
 const Contact = () => {
     return (
         <div>
+            {/* Page intro started  */}
+            <div>
+            <div className="relative">
+      <div className="relative bg-gray-900">
+        <img
+          className="object-cover w-full h-[60vh]"
+          src={intro}
+          alt="Page Intro"
+        />
+        <div className="absolute inset-0 bg-blue-700 opacity-25"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center bg-white rounded-md px-20 py-3">
+            <h1 className="text-4xl font-bold text-black mb-4 italic">
+              Contact Us
+            </h1>
+            <Link
+              to="/"
+              className="inline-block text-black font-bold py-2 px-4 rounded"
+            >
+              <span className='hover:text-blue-700'>Home</span> - Contact
+            </Link>
+          </div>
+        </div>
+      </div>
+    </div>
+            </div>
+            {/* Page intro end */}
             <div className='lg:w-[1380px] mx-auto'>
             <div className='my-5'>
                 <p className='uppercase mb-2 ml-28 font-semibold'>have a question</p>

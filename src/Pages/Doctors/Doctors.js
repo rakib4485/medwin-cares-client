@@ -1,9 +1,16 @@
 import React from 'react';
+import DoctorsIntro from './DoctorsIntro';
+import DoctorsSearch from './DoctorsSearch';
+import AllDoctors from './AllDoctors';
 
 const Doctors = () => {
     return (
         <div>
-            <h3>Doctors</h3>
+            <DoctorsIntro/>
+            <div className='lg:w-[1380px] mx-auto'>
+            <DoctorsSearch/>
+            <AllDoctors/>
+            </div>
         </div>
     );
 };

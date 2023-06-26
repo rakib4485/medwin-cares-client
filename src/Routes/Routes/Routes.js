@@ -8,7 +8,7 @@ import AuthLayout from "../../Layout/AuthLayout/AuthLayout";
 import Error from "../../Pages/Error/Error";
 import SignUp from "../../Pages/SignUp/SignUp";
 import Doctors from "../../Pages/Doctors/Doctors";
-
+import DoctorDetails from "../../Pages/DoctorDetails/DoctorDetails";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -25,6 +25,10 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About/>
+            },
+            {
+                path: '/doctorDetails',
+                element: <DoctorDetails/>
             }
         ]
     }, 

@@ -32,34 +32,18 @@ const Navbar = () => {
                 >
                   About
                 </Link>
-                <div className="relative">
-                  <button
-                    type="button"
-                    onClick={toggleMenu}
-                    className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium focus:outline-none"
-                  >
-                    Dropdown
-                  </button>
-                  {isOpen && (
-                    <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg">
-                      <div className="py-1">
-                        <Link
-                          to="/dropdown-item1"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        >
-                          Dropdown Item 1
-                        </Link>
-                        <Link
-                          to="/dropdown-item2"
-                          className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                        >
-                          Dropdown Item 2
-                        </Link>
-                      </div>
-                    </div>
-                  )}
-                </div>
-                
+                <Link
+                  to="/doctors"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Find Doctor
+                </Link>
+                <Link
+                  to="/shop"
+                  className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                >
+                  Shop
+                </Link>
               <Link
                 to="/contact"
                 className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
