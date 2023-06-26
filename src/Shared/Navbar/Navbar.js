@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Index() {
-    const [searchInput, setSearchInput] = useState(true);
     const [mdOptionsToggle, setMdOptionsToggle] = useState(true);
     const [showMenu, setShowMenu] = useState(false);
 
@@ -46,9 +45,9 @@ export default function Index() {
                     {/* For large screens */}
                     <div className="dark:bg-gray-900 bg-gray-50 px-6 py-9">
                         <div className="container mx-auto flex items-center justify-between">
-                            <h1 className="md:w-2/12 cursor-pointer text-3xl font-bold italic text-gray-800 dark:text-white nav-title" aria-label="medwin-cares">
+                            <Link to='/' className="md:w-2/12 cursor-pointer text-3xl font-bold italic text-gray-800 dark:text-white nav-title" aria-label="medwin-cares">
                                 <span className="text-gray-500">Medwin</span> Cares.
-                            </h1>
+                            </Link>
                             <ul className="hidden w-8/12 md:flex items-center justify-center space-x-8">
                                 <li>
                                     <Link to='/' className="dark:text-white text-base text-gray-800 focus:outline-none focus:ring-2 focus:ring-gray-800 hover:underline">

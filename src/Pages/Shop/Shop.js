@@ -42,9 +42,12 @@ const Shop = () => {
                         alt="Product"
                         className="w-full h-auto"
                     />
-                    <div className="absolute inset-0 flex items-center justify-center opacity-0 hover:opacity-100">
+                    <div className="absolute inset-0 flex gap-2 items-center justify-center opacity-0 hover:opacity-100">
                         <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
                             Add to Cart
+                        </button>
+                        <button className="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded">
+                            Buy Now
                         </button>
                     </div>
                 </div>
