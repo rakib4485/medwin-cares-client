@@ -8,6 +8,7 @@ import departmentSix from '../../../assests/department-6.jpg'
 import departmentSeven from '../../../assests/department-7.jpg'
 import departmentEight from '../../../assests/department-8.jpg'
 import { MdArrowForward } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 const DepartmentCard = () => {
     return (
@@ -21,7 +22,7 @@ const DepartmentCard = () => {
                         </div>
                         <h2 className="font-semibold text-3xl my-5 ">Dental</h2>
                         <div className="flex justify-end mt-3 ">
-                        <button className='italic border-2 border-black p-2 hover:bg-black hover:text-white flex gap-1 items-center'>Learn More <span><MdArrowForward/></span></button>
+                        <Link to='/departments' className='italic border-2 border-black p-2 hover:bg-black hover:text-white flex gap-1 items-center'>Learn More <span><MdArrowForward/></span></Link>
                         </div>
                     </article>
 
