@@ -1,2 +1,2 @@
 **[Live Site]()**
-![](img/home.png)
+![](src/img/home.png)
