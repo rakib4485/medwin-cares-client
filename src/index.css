@@ -6,6 +6,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&display=swap');
 /* body fonts  */
 @import url('https://fonts.googleapis.com/css2?family=Amiri&display=swap');
+/* navicon fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Arizonia&display=swap');
+
+/* navicon styles  */
+.nav-title{
+  font-family: 'Arizonia', cursive;
+}
 
 body {
   margin: 0;

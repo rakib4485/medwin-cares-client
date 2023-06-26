@@ -5,7 +5,7 @@ import icon from '../../../assests/icon-2.svg'
 const Choose = () => {
     return (
         <div className='my-11 lg:w-[1380px] mx-auto'>
-            <div className='grid gap-4 lg:grid-cols-2'>
+            <div className='grid gap-4 lg:grid-cols-2 mx-3 lg:mx-0'>
                 <div>
                     <div className='mb-6'>
                     <p className="uppercase text-blue-700 text-2xl">why choose us</p>
@@ -15,10 +15,10 @@ const Choose = () => {
                     <div>
                         <div className='flex gap-3 items-center'>
                             <div className='bg-blue-700 p-5 rounded-full'>
-                            <h1 className='text-3xl text-white'>1</h1>
+                            <h1 className='text-2xl lg:text-3xl text-white'>1</h1>
                             </div>
                             <div>
-                                <h1 className='text-4xl mb-2'>Modern Technology</h1>
+                                <h1 className='text-2xl lg:text-4xl mb-2'>Modern Technology</h1>
                                 <p className='lg:w-2/3 text-justify'>Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
                             </div>
                         </div>
@@ -26,10 +26,10 @@ const Choose = () => {
                     <div className='my-5'>
                         <div className='flex gap-3 items-center'>
                             <div className='bg-black p-5 rounded-full'>
-                            <h1 className='text-3xl text-white'>2</h1>
+                            <h1 className='text-2xl lg:text-3xl text-white'>2</h1>
                             </div>
                             <div>
-                                <h1 className='text-4xl mb-2'>Professional Doctors</h1>
+                                <h1 className='text-2xl lg:text-4xl mb-2'>Professional Doctors</h1>
                                 <p className='lg:w-2/3 text-justify'>Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
                             </div>
                         </div>
@@ -37,26 +37,17 @@ const Choose = () => {
                     <div>
                         <div className='flex gap-3 items-center'>
                             <div className='bg-blue-700 p-5 rounded-full'>
-                            <h1 className='text-3xl text-white'>3</h1>
+                            <h1 className='text-2xl lg:text-3xl text-white'>3</h1>
                             </div>
                             <div>
-                                <h1 className='text-4xl mb-2'>Affordable Price</h1>
+                                <h1 className='text-2xl lg:text-4xl mb-2'>Affordable Price</h1>
                                 <p className='lg:w-2/3 text-justify'>Pellentesque in ipsum id orci porta dapibus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus.</p>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div>
-                    <img className='w-3/4' src={chooseImg} alt="" />
-                    <div>
-                        <div className='flex justify-center items-center gap-4 bg-white p-4 w-3/5'>
-                            <img src={icon} alt="" />
-                            <div>
-                                <p className='text-2xl font-semibold'>24/7 Hours Service</p>
-                                <h1 className='text-4xl font-semibold text-blue-700'>1-885-665-2022</h1>
-                            </div>
-                        </div>
-                    </div>
+                    <img className='w-3/4 rounded-xl' src={chooseImg} alt="" />
                 </div>
             </div>
         </div>

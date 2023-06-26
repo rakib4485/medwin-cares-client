@@ -11,7 +11,7 @@ import Booking from './Booking/Booking';
 const Home = () => {
     return (
         <div className=''>
-           {/* <Hero/> */}
+           <Hero/>
            <Option/>
            <AboutHome/>
            <Department/>

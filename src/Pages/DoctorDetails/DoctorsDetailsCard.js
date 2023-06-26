@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import intro from '../../assests/intro.jpg'
 import doctorProfile from '../../assests/team-1.jpg'
 import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
-import { HiOutlineViewGrid } from 'react-icons/hi';
+import { HiOutlineArrowCircleRight, HiOutlineTemplate, HiOutlineViewGrid } from 'react-icons/hi';
 
 const DoctorsDetailsCard = () => {
     return (
@@ -85,7 +85,7 @@ const DoctorsDetailsCard = () => {
                   <div className='lg:w-2/4 lg:ms-28'>
                    <h1 className='text-4xl bg-blue-500 p-3 text-white'>Write a review</h1>
                    <div className='mt-2'>
-                   <form action="">
+                   <form action="" className='bg-gray-400 py-7 ps-2 pe-1'>
                     <textarea type="text" className='px-20 py-9 rounded' placeholder='Please leave your review' name="" id="" />
                     <input type="text" className='py-2 rounded' name="" id="" placeholder='Your email'/>
                     <input type="submit" className='mt-2 bg-slate-700 text-white w-full p-4 rounded' value="Submit review" />
@@ -98,12 +98,30 @@ const DoctorsDetailsCard = () => {
                 <div className='grid grid-cols-1 gap-5 lg:grid-cols-2'>
                         <div>
                         <h1 className='text-4xl bg-gray-300 p-3'>Employment</h1>
+                        <div className="mt-5">
+                        <p className='flex items-center gap-4 text-xl'><span className='text-blue-800'><HiOutlineArrowCircleRight/></span>University of Washington School of Medicine <br />2021-2023</p>
+                        <p className='flex items-center gap-4 text-xl my-3'><span className='text-blue-800'><HiOutlineArrowCircleRight/></span>Resident, Physical Medicine and Rehabilitation, Bexi Hospital <br />2018-2021</p>
+                        <p className='flex items-center gap-4 text-xl'><span className='text-blue-800'><HiOutlineArrowCircleRight/></span>Specialist of Physical Medicine and Rehabilitation <br />2024-2018</p>
+                        </div>
                         </div>
                         <div>
-                        <h1 className='text-4xl bg-gray-300 p-3'>Memberships</h1>
                         </div>
                 </div>
-                {/* Employment & membership end  */}
+                {/* Employment end  */}
+                {/* Membership started  */}
+                <div className='my-3 grid grid-cols-1 lg:grid-cols-2'>
+                    <div>
+                    <h1 className='text-4xl bg-gray-300 p-3'>Membership</h1>
+                <div className="mt-5">
+                <p className='flex items-center gap-4 text-xl'><span className='text-blue-800'><HiOutlineTemplate/></span>Member, International Association for the Study of Pain</p>
+                <p className='flex items-center gap-4 text-xl my-3'><span className='text-blue-800'><HiOutlineTemplate/></span>Member, Society for Affective Science</p>
+                <p className='flex items-center gap-4 text-xl my-3'><span className='text-blue-800'><HiOutlineTemplate/></span>International Society of Physical and Rehabilitation</p>
+                <p className='flex items-center gap-4 text-xl'><span className='text-blue-800'><HiOutlineTemplate/></span>Division of General Internal Medicine</p>
+                </div>
+                    </div>
+                    <div></div>
+                </div>
+                {/* Membership end */}
             </div>
             {/* Doctor biography end  */}
             </div>

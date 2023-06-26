@@ -22,10 +22,10 @@ const AboutHome = () => {
                         <img src={aboutThree} alt="" />
                     </div>
                 </div>
-                <div>
+                <div className='mx-3 lg:mx-0'>
                     <p className="uppercase text-blue-700 text-2xl">who we are</p>
-                    <h1 className='text-4xl font-medium my-2 w-'>We have been providing services to patients for over 20 years</h1>
-                    <p className='text-xl'>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat.</p>
+                    <h1 className='text-3xl lg:text-4xl font-medium my-2 w-'>We have been providing services to patients for over 20 years</h1>
+                    <p className='text-xl text-justify'>Curabitur non nulla sit amet nisl tempus convallis quis ac lectus. Donec sollicitudin molestie malesuada. Nulla quis lorem ut libero malesuada feugiat.</p>
                     <div className='grid gap-3 lg:grid-cols-2 mt-7'>
                         <div>
                             <MdCleanHands className='text-4xl text-blue-700'/>

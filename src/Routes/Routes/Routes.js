@@ -9,6 +9,9 @@ import Error from "../../Pages/Error/Error";
 import SignUp from "../../Pages/SignUp/SignUp";
 import Doctors from "../../Pages/Doctors/Doctors";
 import DoctorDetails from "../../Pages/DoctorDetails/DoctorDetails";
+import Shop from "../../Pages/Shop/Shop";
+import Appointment from "../../Pages/Appointment/Appointment";
+import Departments from "../../Pages/Departments/Departments";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -27,9 +30,21 @@ const router = createBrowserRouter([
                 element: <About/>
             },
             {
+                path: '/shop',
+                element: <Shop/>
+            },
+            {
                 path: '/doctorDetails',
                 element: <DoctorDetails/>
-            }
+            },
+            {
+                path: '/appointment',
+                element: <Appointment/>
+            },
+            {
+                path: '/departments',
+                element: <Departments/>
+            },
         ]
     }, 
     {
