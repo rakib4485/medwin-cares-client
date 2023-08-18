@@ -1,4 +1,7 @@
-**[Live Site]()**
+**[Live Site]()** <br>
+
+***Home***
 ![](src/img/home.png)
-<br>
+
+***About Us***
 ![](src/img/about.png)
