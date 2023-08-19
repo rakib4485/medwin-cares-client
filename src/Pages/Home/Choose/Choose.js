@@ -4,7 +4,7 @@ import icon from '../../../assests/icon-2.svg'
 
 const Choose = () => {
     return (
-        <div className='my-11 lg:w-[1380px] mx-auto'>
+        <div className='my-11 mx-[7%]'>
             <div className='grid gap-4 lg:grid-cols-2 mx-3 lg:mx-0'>
                 <div>
                     <div className='mb-6'>

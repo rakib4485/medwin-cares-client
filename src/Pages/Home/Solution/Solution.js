@@ -3,7 +3,7 @@ import { MdCalendarMonth, MdFactCheck, MdLightbulbOutline, MdPersonSearch } from
 
 const Solution = () => {
     return (
-        <div className='my-11 lg:w-[1380px] mx-auto'>
+        <div className='my-11 mx-[7%]'>
             <div className="text-center">
             <p className="uppercase text-blue-700 text-2xl">solution</p> 
                  <h1 className='lg:w-1/2 text-3xl lg:text-5xl mx-auto'>Some easy steps to get your proper solution</h1>

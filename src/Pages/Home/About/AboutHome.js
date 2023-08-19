@@ -6,7 +6,7 @@ import { MdCleanHands, MdLocalPharmacy, MdOutlineHandshake, MdOutlineMedicalServ
 
 const AboutHome = () => {
     return (
-        <div className='my-11 lg:w-[1380px] mx-auto'>
+        <div className='my-11 mx-[7%]'>
             <div className='grid gap-8 grid-cols-1 lg:grid-cols-2 items-center'>
                 <div>
                     <div className='lg:flex gap-3 mb-2'>
