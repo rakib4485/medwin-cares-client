@@ -4,11 +4,13 @@ import teamTwo from '../../../../assests/team-2.jpg';
 import teamThree from '../../../../assests/team-3.jpg';
 import teamFour from '../../../../assests/team-4.jpg';
 import { Link } from 'react-router-dom';
+import ViewButton from '../../../../components/ViewButton/ViewButton';
+import AppointmentButton from '../../../../components/AppointmentButton/AppointmentButton';
 
 const SpecialistCard = () => {
     return (
         <div>
-            <section class="container mx-auto p-10 md:p-20 grid lg:grid-cols-2 2xl:grid-cols-4 grid-cols-1 gap-x-3 transform duration-500">
+            <section class="container mx-auto p-10 md:p-20 grid gap-4 lg:grid-cols-2 2xl:grid-cols-3 grid-cols-1 gap-x-3 transform duration-500">
                 <article class="shadow-md mx-auto max-w-sm transform hover:-translate-y-1 duration-300 hover:shadow-xl cursor-pointer">
                     <div class="max-h-140 overflow-hidden">
                         <img class="w-full h-auto" src={teamOne}
@@ -19,6 +21,14 @@ const SpecialistCard = () => {
                         <h1 class="text-2xl font-semibold text-gray-700">Glenn Arredondo</h1>
                         </Link>
                         <p class="text-xl font-light leading-relaxed mt-5">Family Physicians </p>
+                        <div className='flex justify-between items-center mt-3'>
+                            <Link to='/doctorDetails'>
+                                <ViewButton>View Profile</ViewButton>
+                            </Link>
+                            <Link>
+                            <AppointmentButton>Book Appointment</AppointmentButton>
+                            </Link>
+                        </div>
                     </div>
                 </article>
                 <article class="shadow-md mx-auto max-w-sm transform hover:-translate-y-1 duration-300 hover:shadow-xl cursor-pointer">

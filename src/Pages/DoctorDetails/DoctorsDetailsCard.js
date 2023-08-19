@@ -4,6 +4,7 @@ import intro from '../../assests/intro.jpg'
 import doctorProfile from '../../assests/team-1.jpg'
 import { FaFacebook, FaInstagram, FaLinkedinIn } from 'react-icons/fa';
 import { HiOutlineArrowCircleRight, HiOutlineTemplate, HiOutlineViewGrid } from 'react-icons/hi';
+import AppointmentButton from '../../components/AppointmentButton/AppointmentButton';
 
 const DoctorsDetailsCard = () => {
     return (
@@ -68,35 +69,23 @@ const DoctorsDetailsCard = () => {
                         <h1 className='text-4xl bg-gray-300 p-3'>Biography</h1>
                         <p className='text-justify mt-3 lg:mx-0 mx-2'>Donec rutrum congue leo eget malesuada. Donec rutrum congue leo eget malesuada. Nulla porttitor accumsan tincidunt. Sed porttitor lectus nibh. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet et, porttitor at sem. <br /> <br /> Pellentesque in ipsum id orci porta dapibus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. Vestibulum ac diam sit amet quam vehicula elementum sed sit amet dui. Quisque velit nisi, pretium ut lacinia in, elementum id enim. Donec sollicitudin molestie malesuada. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec velit neque, auctor sit amet aliquam vel, ullamcorper sit amet ligula. Pellentesque in ipsum id orci porta dapibus. Curabitur non nulla sit amet nisl tempus convallis quis.</p>
                     </div>
-                    <div className='lg:w-2/4 lg:ms-28'>
-                        <h1 className='text-4xl bg-blue-500 p-3 text-white'>Appointmet Time</h1>
-                    </div>
-                </div>
-                {/* Doctor education started  */}
-                <div className='my-3 grid grid-cols-1 gap-6 lg:grid-cols-2'>
-                  <div className=''>
+                    <div>
+                    <div className=''>
                    <h1 className='text-4xl bg-gray-300 p-3'>Education</h1>
                    <div className="mt-5">
                     <p className='flex items-center gap-4 text-xl'><span className='text-blue-800'><HiOutlineViewGrid/></span>University of Washington School of Medicine <br />New York, NY USA (2013)</p>
                     <p className='flex items-center gap-4 text-xl my-3'><span className='text-blue-800'><HiOutlineViewGrid/></span>Behavioral Medicine and Neuropsychology Internship <br /> University of Washington (2010) (2013)</p>
                     <p className='flex items-center gap-4 text-xl'><span className='text-blue-800'><HiOutlineViewGrid/></span>Mayo School of Graduate Medical Education <br /> University of Washington (2009)</p>
                    </div>
-                  </div>
-                  <div className='lg:w-2/4 lg:ms-28'>
-                   <h1 className='text-4xl bg-blue-500 p-3 text-white'>Write a review</h1>
-                   <div className='mt-2'>
-                   <form action="" className='bg-gray-400 py-7 ps-2 pe-1'>
-                    <textarea type="text" className='px-20 py-9 rounded' placeholder='Please leave your review' name="" id="" />
-                    <input type="text" className='py-2 rounded' name="" id="" placeholder='Your email'/>
-                    <input type="submit" className='mt-2 bg-slate-700 text-white w-full p-4 rounded' value="Submit review" />
-                   </form>
-                   </div>
-                  </div>
+                  </div>  
+                    </div>
                 </div>
-                {/* Doctor education end  */}
                 {/* Employment & membership started  */}
-                <div className='grid grid-cols-1 gap-5 lg:grid-cols-2'>
-                        <div>
+                
+                {/* Membership started  */}
+                <div className='my-3 grid gap-6 grid-cols-1 lg:grid-cols-2'> 
+                <div>
+                <div>
                         <h1 className='text-4xl bg-gray-300 p-3'>Employment</h1>
                         <div className="mt-5">
                         <p className='flex items-center gap-4 text-xl'><span className='text-blue-800'><HiOutlineArrowCircleRight/></span>University of Washington School of Medicine <br />2021-2023</p>
@@ -104,12 +93,7 @@ const DoctorsDetailsCard = () => {
                         <p className='flex items-center gap-4 text-xl'><span className='text-blue-800'><HiOutlineArrowCircleRight/></span>Specialist of Physical Medicine and Rehabilitation <br />2024-2018</p>
                         </div>
                         </div>
-                        <div>
-                        </div>
                 </div>
-                {/* Employment end  */}
-                {/* Membership started  */}
-                <div className='my-3 grid grid-cols-1 lg:grid-cols-2'>
                     <div>
                     <h1 className='text-4xl bg-gray-300 p-3'>Membership</h1>
                 <div className="mt-5">
@@ -119,11 +103,16 @@ const DoctorsDetailsCard = () => {
                 <p className='flex items-center gap-4 text-xl'><span className='text-blue-800'><HiOutlineTemplate/></span>Division of General Internal Medicine</p>
                 </div>
                     </div>
-                    <div></div>
                 </div>
                 {/* Membership end */}
             </div>
             {/* Doctor biography end  */}
+            <Link className='text-center'>
+            <AppointmentButton>Book an Appointment</AppointmentButton>
+            </Link>
+            <div className="my-5">
+
+            </div>
             </div>
         </div>
     );
