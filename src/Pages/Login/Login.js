@@ -1,46 +1,32 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaGoogle } from "react-icons/fa";
+import loginImg from '../../assests/login.jpg'
 
 const Login = () => {
     return (
-        <div class="h-full bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-9 px-4">
-            <div class="flex flex-col items-center justify-center">
-
-                <div class="bg-white shadow rounded lg:w-1/3  md:w-1/2 w-full p-10 mt-16">
-                    <p tabindex="0" class="focus:outline-none text-2xl font-extrabold leading-6 text-gray-800">Login to your account</p>
-                    <p tabindex="0" class="focus:outline-none text-sm mt-4 font-medium leading-none text-gray-500">Dont have account? <Link to='/signup'   class="hover:text-gray-500 focus:text-gray-500 focus:outline-none focus:underline hover:underline text-sm font-medium leading-none  text-gray-800 cursor-pointer"> Sign up</Link></p>
-                    <button aria-label="Continue with google" role="button" class="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10">
-                       <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg2.svg" alt="google"/>
-                        <p class="text-base font-medium ml-4 text-gray-700">Continue with Google</p>
-                    </button>
-                    <div class="w-full flex items-center justify-between py-5">
-                         <hr class="w-full bg-gray-400"/>
-                         <p class="text-base font-medium leading-4 px-2.5 text-gray-400">OR</p>
-                         <hr class="w-full bg-gray-400"/>
-                        </div>
-                        <div>
-                            <label id="email" class="text-sm font-medium leading-none text-gray-800">
-                                Email
-                            </label>
-                            <input aria-labelledby="email" type="email" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"/>
-                        </div>
-                        <div class="mt-6  w-full">
-                            <label for="pass" class="text-sm font-medium leading-none text-gray-800">
-                                Password
-                            </label>
-                           <div class="relative flex items-center justify-center">
-                            <input id="pass" type="password" class="bg-gray-200 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"/>
-                            <div class="absolute right-0 mt-2 mr-3 cursor-pointer">
-                              <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/sign_in-svg5.svg" alt="viewport"/>                                    
-                            </div>
-                           </div>
-                        </div>
-                        <div class="mt-8">
-                            <button role="button" class="focus:ring-2 focus:ring-offset-2 focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full">Login</button>
-                        </div>
+      <div className='mx-[7%]'>
+       <div className='my-14 grid grid-cols-1 items-center lg:grid-cols-2'>
+       <div className='lg:w-2/4 mx-auto shadow-md shadow-cyan-600 px-6 py-28'>
+            <h1 className='text-3xl font-bold'>Welcome Back!</h1>
+            <p className="mb-8 mt-5">Please Log in to your account.</p>
+            <form action="">
+                <input type="text"  className="w-full px-3 py-2 rounded-lg border focus:outline-none focus:border-blue-500 mb-4" name="phone" placeholder='Phone Number' id="phone" required />
+                <input type="password"  className="w-full px-3 py-2 rounded-lg border focus:outline-none focus:border-blue-500 mb-4" name="password" placeholder='Password' id="password" required />
+                <Link className='text-red-600'>Forget Password?</Link>
+                <div className='flex gap-7 my-4 lg:ml-16'>
+                <button className='bg-green-600 px-9 rounded text-white font-semibold'>Login</button>
+                <Link to='/signup' className='border-green-600 border-2 p-2 rounded text-blue-600 font-semibold'>Create account</Link>
                 </div>
-            </div>
+    
+                {/* <button className='w-full flex gap-3 items-center bg-cyan-900 rounded text-white p-2'><FaGoogle/> Login with Google</button> */}
+            </form>
         </div>
+        <div className='hidden lg:block'>
+          <img className='w-[86%]' src={loginImg} alt="" />
+        </div>
+       </div>
+      </div>
     );
 };
 
