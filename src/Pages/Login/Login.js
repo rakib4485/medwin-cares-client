@@ -7,7 +7,7 @@ const Login = () => {
     return (
       <div className='mx-[7%]'>
        <div className='my-14 grid grid-cols-1 items-center lg:grid-cols-2'>
-       <div className='lg:w-2/4 mx-auto shadow-md shadow-cyan-600 px-6 py-28'>
+       <div className='lg:w-2/4 mx-auto shadow-md shadow-cyan-600 px-6 py-28 rounded-md'>
             <h1 className='text-3xl font-bold'>Welcome Back!</h1>
             <p className="mb-8 mt-5">Please Log in to your account.</p>
             <form action="">
