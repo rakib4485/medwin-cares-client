@@ -7,7 +7,7 @@
 ![](src/img/about.png)
 
 ***Department Details***
-![](src/img/departmentDetials.png.png)
+![](src/img/departmentDetials.png)
 
 ***Contact Us***
 ![](src/img/contact.png)
