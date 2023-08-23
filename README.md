@@ -5,3 +5,6 @@
 
 ***About Us***
 ![](src/img/about.png)
+
+***Contact Us***
+![](src/img/contact.png)
