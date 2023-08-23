@@ -6,6 +6,9 @@
 ***About Us***
 ![](src/img/about.png)
 
+***Department Details***
+![](src/img/departmentDetials.png.png)
+
 ***Contact Us***
 ![](src/img/contact.png)
 
