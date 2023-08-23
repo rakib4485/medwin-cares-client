@@ -9,6 +9,9 @@
 ***Department Details***
 ![](src/img/departmentDetials.png)
 
+***Doctor Details***
+![](src/img/doctorDetials.png)
+
 ***Contact Us***
 ![](src/img/contact.png)
 
