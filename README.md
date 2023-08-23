@@ -12,6 +12,9 @@
 ***Doctor Details***
 ![](src/img/doctorDetials.png)
 
+***Appointment***
+![](src/img/appointment.png)
+
 ***Contact Us***
 ![](src/img/contact.png)
 
