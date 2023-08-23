@@ -10,7 +10,7 @@
 ![](src/img/departmentDetials.png)
 
 ***Doctor Details***
-![](src/img/doctorDetials.png)
+![](src/img/doctorDetails.png)
 
 ***Appointment***
 ![](src/img/appointment.png)
