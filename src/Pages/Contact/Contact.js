@@ -25,7 +25,7 @@ const Contact = () => {
                 </div>
             </div>
             <div className="lg:mx-[25%] mt-10 bg-white py-9 px-6 rounded-md">
-                <p>Contact Form</p>
+                <p className='italic font-semibold'>Contact Form</p>
                 <div className='mt-5'>
                     <form>
                         <div className='lg:flex gap-4 items-center justify-center'>
