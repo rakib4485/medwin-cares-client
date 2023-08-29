@@ -12,6 +12,7 @@ import DoctorDetails from "../../Pages/DoctorDetails/DoctorDetails";
 import Shop from "../../Pages/Shop/Shop";
 import Appointment from "../../Pages/Appointment/Appointment";
 import Departments from "../../Pages/Departments/Departments";
+import Appointments from "../../Pages/Appointments/Appointments/Appointments";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
             {
                 path: '/appointment',
                 element: <Appointment/>
+            },
+            {
+                path: '/appointments',
+                element: <Appointments/>
             },
             {
                 path: '/departments',

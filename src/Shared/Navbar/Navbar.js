@@ -77,7 +77,7 @@ export default function Index() {
                             </ul>
                             <div className="md:w-2/12 justify-end flex items-center space-x-4 xl:space-x-8">
                                 <div className="hidden lg:flex items-center space-x-4 xl:space-x-8">
-                                    <Link to='/appointment' className="bg-blue-700 px-5 py-3 text-white font-semibold rounded">Appointment</Link>
+                                    <Link to='/appointments' className="bg-blue-700 px-5 py-3 text-white font-semibold rounded">Appointment</Link>
                                     <button aria-label="go to cart" className="text-gray-800 dark:hover:text-gray-300 dark:text-white focus:outline-none focus:ring-2 focus:ring-gray-800">
                                         <svg className="fill-stroke" width={26} height={26} viewBox="0 0 26 26" fill="none" xmlns="http://www.w3.org/2000/svg">
                                             <path d="M5 1L1 5.8V22.6C1 23.2365 1.28095 23.847 1.78105 24.2971C2.28115 24.7471 2.95942 25 3.66667 25H22.3333C23.0406 25 23.7189 24.7471 24.219 24.2971C24.719 23.847 25 23.2365 25 22.6V5.8L21 1H5Z" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
