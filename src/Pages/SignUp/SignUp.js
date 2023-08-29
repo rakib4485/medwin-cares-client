@@ -9,7 +9,7 @@ const SignUp = () => {
        <div className='hidden lg:block'>
          <img className='w-[86%]' src={signupImg} alt="" />
        </div>
-      <div className='lg:w-2/4 mx-auto shadow-md shadow-cyan-600 px-6 py-28 rounded-md'>
+      <div className='lg:w-3/4 mx-auto shadow-md shadow-cyan-600 px-6 py-28 rounded-md'>
            <h1 className='text-3xl font-bold'>Sign up!</h1>
            <p className="mb-8 mt-5">Please register here..</p>
            <form action="">
