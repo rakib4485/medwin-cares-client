@@ -7,20 +7,21 @@ import { Link } from 'react-router-dom';
 import ViewButton from '../../../../components/ViewButton/ViewButton';
 import AppointmentButton from '../../../../components/AppointmentButton/AppointmentButton';
 
-const SpecialistCard = () => {
+const SpecialistCard = ({doctor}) => {
+    const {id, img, name, specialist} = doctor;
     return (
         <div>
-            <section class="container mx-auto p-10 md:p-20 grid gap-4 lg:grid-cols-2 2xl:grid-cols-3 grid-cols-1 gap-x-3 transform duration-500">
-                <article class="shadow-md mx-auto max-w-sm transform hover:-translate-y-1 duration-300 hover:shadow-xl cursor-pointer">
+            <div>
+                <div class="shadow-md mx-auto max-w-sm transform hover:-translate-y-1 duration-300 hover:shadow-xl cursor-pointer">
                     <div class="max-h-140 overflow-hidden">
-                        <img class="w-full h-auto" src={teamOne}
+                        <img class="w-full h-auto" src={img}
                             alt="" />
                     </div>
                     <div class="p-7 ">
                         <Link to='/doctorDetails'>
-                        <h1 class="text-2xl font-semibold text-gray-700">Glenn Arredondo</h1>
+                        <h1 class="text-2xl font-semibold text-gray-700">{name}</h1>
                         </Link>
-                        <p class="text-xl font-light leading-relaxed mt-5">Family Physicians </p>
+                        <p class="text-xl font-light leading-relaxed mt-5">{specialist} </p>
                         <div className='flex justify-between items-center mt-3'>
                             <Link to='/doctorDetails'>
                                 <ViewButton>View Profile</ViewButton>
@@ -30,38 +31,8 @@ const SpecialistCard = () => {
                             </Link>
                         </div>
                     </div>
-                </article>
-                <article class="shadow-md mx-auto max-w-sm transform hover:-translate-y-1 duration-300 hover:shadow-xl cursor-pointer">
-                    <div class="max-h-140 overflow-hidden">
-                        <img class="w-full h-auto" src={teamTwo}
-                            alt="" />
-                    </div>
-                    <div class="p-7 my-auto pb-12 ">
-                        <h1 class="text-2xl font-semibold text-gray-700">Dorthy Winters</h1>
-                        <p class="text-xl font-light leading-relaxed mt-5">Gastroenterologists</p>
-                    </div>
-                </article>
-                <article class="shadow-md mx-auto max-w-sm transform hover:-translate-y-1 duration-300 hover:shadow-xl cursor-pointer ">
-                    <div class="max-h-140 overflow-hidden">
-                        <img class="w-full h-auto" src={teamThree}
-                            alt="" />
-                    </div>
-                    <div class="p-7 my-auto pb-12 ">
-                        <h1 class="text-2xl font-semibold text-gray-700">Christopher Perreault </h1>
-                        <p class="text-xl font-light leading-relaxed mt-5">Medicine Specialists</p>
-                    </div>
-                </article>
-                <article class="shadow-md mx-auto max-w-sm transform hover:-translate-y-1 duration-300 hover:shadow-xl cursor-pointer ">
-                    <div class="max-h-140 overflow-hidden">
-                        <img class="w-full h-auto" src={teamFour}
-                            alt="" />
-                    </div>
-                    <div class="p-7 my-auto pb-12 ">
-                        <h1 class="text-2xl font-semibold text-gray-700">Linda Flores </h1>
-                        <p class="text-xl font-light leading-relaxed mt-5">Gynecologists </p>
-                    </div>
-                </article>
-            </section>
+                </div>
+            </div>
 
         </div>
     );

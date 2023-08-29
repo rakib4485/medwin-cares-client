@@ -107,7 +107,7 @@ const DoctorsDetailsCard = () => {
                 {/* Membership end */}
             </div>
             {/* Doctor biography end  */}
-            <Link className='text-center'>
+            <Link to='/appointments' className='text-center'>
             <AppointmentButton>Book an Appointment</AppointmentButton>
             </Link>
             <div className="my-5">
