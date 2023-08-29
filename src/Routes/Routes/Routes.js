@@ -13,6 +13,14 @@ import Shop from "../../Pages/Shop/Shop";
 import Appointment from "../../Pages/Appointment/Appointment";
 import Departments from "../../Pages/Departments/Departments";
 import Appointments from "../../Pages/Appointments/Appointments/Appointments";
+import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
+import Dashboard from "../../Pages/Dashboard/Dashboard";
+import MyAppointment from "../../Pages/Dashboard/MyAppointment/MyAppointment";
+import AdminRoutes from "../AdminRoutes/AdminRoutes";
+import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
+import AddDoctor from "../../Pages/Dashboard/AddDoctor/AddDoctor";
+import ManageDoctors from "../../Pages/Dashboard/ManageDoctors/ManageDoctors";
+import PrivateRoute from "./PrivateRoute/PrivateRoute";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -82,6 +90,29 @@ const router = createBrowserRouter([
             }
         ]
     }, 
+    {
+        path: '/dashboard',
+        // element: <PrivateRoute><DashboardLayout/></PrivateRoute>,
+        element: <DashboardLayout/> ,
+        children:[
+            {
+                path: '/dashboard',
+                element: <MyAppointment/>
+            },
+            {
+                path: '/dashboard/allusers',
+                element: <AdminRoutes><AllUsers/></AdminRoutes>
+            },
+            {
+                path: '/dashboard/adddoctor',
+                element: <AdminRoutes><AddDoctor></AddDoctor></AdminRoutes>
+            },
+            {
+                path: '/dashboard/managedoctors',
+                element: <AdminRoutes><ManageDoctors></ManageDoctors></AdminRoutes>
+            }
+        ]
+    },
     {
         path: '*',
         element: <Error/>
