@@ -5,7 +5,7 @@ import { HiMail } from "react-icons/hi";
 
 const Contact = () => {
     return (
-        <div className='h-[88vh] bg-gradient-to-r from-violet-500 to-fuchsia-500 py-10'>
+        <div className='h-[94vh] bg-gradient-to-r from-violet-500 to-fuchsia-500 py-10'>
             <div className='text-white'>
                 <h1 className='text-3xl font-bold text-center'>Get in touch</h1>
                 <p></p>
@@ -24,7 +24,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-            <div className="lg:mx-[25%] mt-10 bg-white py-9 px-6 rounded-md">
+            <div className="lg:mx-[25%] my-10 bg-white py-9 px-6 rounded-md">
                 <p className='italic font-semibold'>Contact Form</p>
                 <div className='mt-5'>
                     <form>

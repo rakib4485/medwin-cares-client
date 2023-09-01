@@ -10,7 +10,7 @@ const Booking = () => {
                    <h1 className='text-white text-4xl font-bold'>Knock us out today to get medical services</h1>
                    </div>
                     <div>
-                        <Link to='/appointment' className='bg-black text-white py-5 px-8 rounded-md'>Book Appointment</Link>
+                        <Link to='/appointments' className='bg-black text-white py-5 px-8 rounded-md'>Book Appointment</Link>
                     </div>
                 </div>
             </div>

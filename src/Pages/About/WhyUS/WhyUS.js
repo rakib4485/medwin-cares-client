@@ -21,7 +21,7 @@ const WhyUS = () => {
                             <p>Medical Team around the world</p>
                         </div>
                     </div>
-                    <Link to='/appointment'>
+                    <Link to='/appointments'>
                     <ButtonTwo>Make an appointment</ButtonTwo>
                     </Link>
                 </div>
@@ -29,17 +29,17 @@ const WhyUS = () => {
                         <div>
                             <p className='flex gap-5 items-center'><IoIosWoman className='bg-orange-700 p-2 text-5xl text-white'/>
                             <h3 className='text-3xl'>Personalized Care</h3></p>
-                            <p className='lg:w-1/3 ml-16 text-justify mt-1'>Modern Clinics provides individualized treatment plans that consider each patient's unique needs, resulting in more effective and efficient care.</p>
+                            <p className='lg:w-2/3 ml-16 text-justify mt-1'>Modern Clinics provides individualized treatment plans that consider each patient's unique needs, resulting in more effective and efficient care.</p>
                         </div>
                         <div className='my-9'>
                             <p className='flex gap-5 items-center'><IoIosInfinite className='bg-orange-700 p-2 text-5xl text-white'/>
                             <h3 className='text-3xl'>Digital Health Solution</h3></p>
-                            <p className='lg:w-1/3 ml-16 text-justify mt-1'>Modern Clinics provides individualized treatment plans that consider each patient's unique needs, resulting in more effective and efficient care.</p>
+                            <p className='lg:w-2/3 ml-16 text-justify mt-1'>Modern Clinics provides individualized treatment plans that consider each patient's unique needs, resulting in more effective and efficient care.</p>
                         </div>
                         <div>
                             <p className='flex gap-5 items-center'><HiOutlineViewGrid className='bg-orange-700 p-2 text-5xl text-white'/>
                             <h3 className='text-3xl'>Collaborative Care</h3></p>
-                            <p className='lg:w-1/3 ml-16 text-justify mt-1'>Modern Clinics provides individualized treatment plans that consider each patient's unique needs, resulting in more effective and efficient care.</p>
+                            <p className='lg:w-2/3 ml-16 text-justify mt-1'>Modern Clinics provides individualized treatment plans that consider each patient's unique needs, resulting in more effective and efficient care.</p>
                         </div>
                 </div>
             </div>

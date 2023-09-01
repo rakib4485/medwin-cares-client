@@ -17,16 +17,13 @@ export default function Index() {
                 <Link to='/'>Home</Link>
             </li>
             <li>
-                <Link to='/about'>About</Link>
-            </li>
-            <li>
                 <Link to='/about'>About Us</Link>
             </li>
             {/* <li>
                 <Link to='/doctors'>Find A Doctor</Link>
             </li> */}
             <li>
-                <Link>Appointment</Link>
+                <Link to='/appointments'>Appointment</Link>
             </li>
             <li>
                 <Link to='/shop'>Shop</Link>
