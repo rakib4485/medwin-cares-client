@@ -97,7 +97,7 @@ const router = createBrowserRouter([
         children:[
             {
                 path: '/dashboard',
-                element: <MyAppointment/>
+                element: <Dashboard/>
             },
             {
                 path: '/dashboard/allusers',

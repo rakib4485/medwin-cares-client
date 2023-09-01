@@ -91,7 +91,6 @@ const Department = () => {
 
                         department={department}
                     ></DepartmentCard></SwiperSlide>)}
-
                 </Swiper>
             </div>
         </div>

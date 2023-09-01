@@ -3,8 +3,8 @@ import { Link, Outlet } from 'react-router-dom';
 import Navbar from '../../Shared/Navbar/Navbar';
 
 const DashboardLayout = () => {
-//   const {user} = useContext(AuthContext);
-//   const [isAdmin] = useAdmin(user.email)
+  //   const {user} = useContext(AuthContext);
+  //   const [isAdmin] = useAdmin(user.email)
   return (
     <div>
       <Navbar></Navbar>
@@ -28,30 +28,27 @@ const DashboardLayout = () => {
              <li><Link to='/dashboard/managedoctors'>Manage Doctors</Link></li>
            </div>
           </ul>
-
         </div>
       </div> */}
       <div className="drawer lg:drawer-open">
-  <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-  <div className="drawer-content flex flex-col items-center justify-center">
-  <Outlet></Outlet>
-    <label htmlFor="my-drawer-2" className="btn btn-primary drawer-button lg:hidden">Open drawer</label>
-  
-  </div> 
-  <div className="drawer-side">
-    <label htmlFor="my-drawer-2" className="drawer-overlay"></label> 
-    <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
-      {/* Sidebar content here */}
-      <div className='text-lg'>
-        <li><Link to='/dashboard'>My Appointment</Link></li>
-           <li><Link to='/dashboard/allusers'>All Users</Link></li>
-             <li><Link to='/dashboard/adddoctor'>Add A Doctor</Link></li>
-             <li><Link to='/dashboard/managedoctors'>Manage Doctors</Link></li>
-           </div>
-    </ul>
-  
-  </div>
-</div>
+        <input id="dashboard-drawer" type="checkbox" className="drawer-toggle" />
+        <div className="drawer-content flex flex-col">
+          <Outlet></Outlet>
+        </div>
+        <div className="drawer-side">
+          <label htmlFor="dashboard-drawer" className="drawer-overlay"></label>
+          <ul className="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+            {/* Sidebar content here */}
+            <div className='text-lg'>
+              <li><Link to='/dashboard'>My Appointment</Link></li>
+              <li><Link to='/dashboard/allusers'>All Users</Link></li>
+              <li><Link to='/dashboard/adddoctor'>Add A Doctor</Link></li>
+              <li><Link to='/dashboard/managedoctors'>Manage Doctors</Link></li>
+            </div>
+          </ul>
+
+        </div>
+      </div>
     </div>
   );
 };

@@ -5,6 +5,8 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient,QueryClientProvider} from "@tanstack/react-query";
 import AuthProvider from './context/AuthProvider';
+import { DayPicker } from 'react-day-picker';
+import 'react-day-picker/dist/style.css';
 
 const queryClient = new QueryClient();
 
