@@ -1,9 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
-const Dashboard = () => {
+const DoctorAppointment = () => {
     return (
         <div>
-            <h1 className='m-5 text-3xl font-bold'>My Appointment</h1>
+            <div className='m-5 flex items-center justify-between'>
+            <h1 className='text-3xl font-bold'>Appointments</h1>
+            <h3 className='text-2xl font-semibold'>Total appointment: 3</h3>
+            </div>
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
@@ -29,7 +33,9 @@ const Dashboard = () => {
         <td>08.00 AM - 08.30 AM</td>
         <td>Online</td>
         <td>Paid</td>
-        <td><button className="btn btn-sm btn-secondary">Download</button></td>
+        <td>
+            <Link to='/prescription'><button className="btn btn-sm btn-secondary">Write</button></Link>
+        </td>
       </tr>
       {/* row 2 */}
       <tr>
@@ -40,7 +46,7 @@ const Dashboard = () => {
         <td>08.00 AM - 08.30 AM</td>
         <td>Offline</td>
         <td>Unpaid</td>
-        <td><button className="btn btn-sm btn-secondary">Download</button></td>
+        <td><button className="btn btn-sm btn-secondary">Write</button></td>
       </tr>
       {/* row 3 */}
       <tr>
@@ -51,7 +57,7 @@ const Dashboard = () => {
         <td>08.00 AM - 08.30 AM</td>
         <td>Online</td>
         <td>Paid</td>
-        <td><button className="btn btn-sm btn-secondary">Download</button></td>
+        <td><button className="btn btn-sm btn-secondary">Write</button></td>
       </tr>
     </tbody>
   </table>
@@ -60,4 +66,4 @@ const Dashboard = () => {
     );
 };
 
-export default Dashboard;
+export default DoctorAppointment;

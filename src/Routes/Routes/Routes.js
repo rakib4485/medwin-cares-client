@@ -21,6 +21,8 @@ import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import AddDoctor from "../../Pages/Dashboard/AddDoctor/AddDoctor";
 import ManageDoctors from "../../Pages/Dashboard/ManageDoctors/ManageDoctors";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import DoctorAppointment from "../../Pages/Dashboard/DoctorAppointment/DoctorAppointment";
+import Prescription from "../../Pages/Dashboard/DoctorAppointment/Prescription";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -58,6 +60,14 @@ const router = createBrowserRouter([
                 path: '/departments',
                 element: <Departments/>
             },
+            {
+                path: '/doctorappointment',
+                element: <DoctorAppointment/>
+            },
+            // {
+            //     path: '/prescription',
+            //     element: <Prescription/>
+            // }
         ]
     }, 
     {
@@ -91,6 +101,16 @@ const router = createBrowserRouter([
         ]
     }, 
     {
+        path: '/prescription',
+        element: <AuthLayout/>,
+        children: [
+            {
+                path: '/prescription',
+                element: <Prescription/>
+            }
+        ]
+    },
+    {
         path: '/dashboard',
         // element: <PrivateRoute><DashboardLayout/></PrivateRoute>,
         element: <DashboardLayout/> ,
@@ -110,6 +130,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/managedoctors',
                 element: <AdminRoutes><ManageDoctors></ManageDoctors></AdminRoutes>
+            },
+            {
+                path: '/dashboard/appointment',
+                element: <AdminRoutes><DoctorAppointment></DoctorAppointment></AdminRoutes>
             }
         ]
     },
