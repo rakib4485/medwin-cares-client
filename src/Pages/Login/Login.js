@@ -30,7 +30,7 @@ const Login = () => {
         <div className='h-[800px] flex justify-center items-center'>
           <div className='w-96 p-7 shadow-md shadow-blue-300 rounded-md'>
           <h2 className="text-3xl text-center mb-2">Login</h2>
-          <form onSubmit={}>
+          <form onSubmit={handleSubmit(handleLogin)}>
             <div className="form-control w-full max-w-xs">
               <label className="label"><span className="label-text">Email</span></label>
             <input {...register("email")} type="text" className="input input-bordered w-full max-w-xs"/>

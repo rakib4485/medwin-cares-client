@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyAdIlhArTCT7wPZWFdvxdC9YZAS0lpSL-o",
-  authDomain: "medwin-cares-d026b.firebaseapp.com",
-  projectId: "medwin-cares-d026b",
-  storageBucket: "medwin-cares-d026b.appspot.com",
-  messagingSenderId: "1051363013392",
-  appId: "1:1051363013392:web:9b277cb66d7d1786a8eb95"
+  apiKey: process.env.REACT_APP_apiKey,
+  authDomain: process.env.REACT_APP_authDomain,
+  projectId: process.env.REACT_APP_projectId,
+  storageBucket: process.env.REACT_APP_storageBucket,
+  messagingSenderId: process.env.REACT_APP_messagingSenderId,
+  appId: process.env.REACT_APP_appId,
 };
 
 // Initialize Firebase
