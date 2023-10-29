@@ -19,9 +19,9 @@ export default function Index() {
       <li>
         <Link to='/about'>About Us</Link>
       </li>
-      {/* <li>
+      <li>
                 <Link to='/doctors'>Find A Doctor</Link>
-            </li> */}
+            </li>
       <li>
         <Link to='/appointments'>Appointment</Link>
       </li>

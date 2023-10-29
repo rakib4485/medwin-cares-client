@@ -8,7 +8,7 @@ const Doctors = () => {
         <div>
             <DoctorsIntro/>
             <div className='lg:w-[1380px] mx-auto'>
-            <DoctorsSearch/>
+            {/* <DoctorsSearch/> */}
             <AllDoctors/>
             </div>
         </div>

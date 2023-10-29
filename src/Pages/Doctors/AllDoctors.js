@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import teamOne from '../../assests/team-1.jpg';
 import teamTwo from '../../assests/team-2.jpg';
 import teamThree from '../../assests/team-3.jpg';
@@ -33,12 +33,31 @@ const AllDoctors = () => {
             specialist: 'Gynecologists'
         },
     ];
+    const [search, setSearch] = useState('');
+    console.log(search)
     return (
         <div>
+            <div className='my-4'>
+            <div className="text-center">
+                <h1 className='text-4xl font-bold'>Find a Doctor</h1>
+                <p className='text-2xl'>Find a healthcare provider at Medwin Cares</p>
+                <div className=" rounded-md items-center w-2/3  mx-auto mt-5 bg-gradient-to-r from-indigo-500 from-10% via-sky-500 via-30% to-emerald-500 to-90% p-4">
+      <form action="">
+      <input
+        type="search" onChange={(e) => setSearch(e.target.value)}
+        className="py-2 px-4 border w-full  border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 "
+        placeholder="Search doctors..."
+      />
+      </form>
+    </div>
+            </div>
+        </div>
             <div>
              <div class="container mx-auto p-10 md:p-20 grid gap-6 lg:grid-cols-2 2xl:grid-cols-3 grid-cols-1 gap-x-3 transform duration-500">
         {
-            doctors.map( doctor => <AllDoctorsCard
+            doctors.filter((doctor) => {
+                return search.toLowerCase() === '' ? doctor : doctor.specialist.toLowerCase().includes(search)
+            }).map( doctor => <AllDoctorsCard
             key={doctor.id}
             doctor={doctor}
             ></AllDoctorsCard>)
