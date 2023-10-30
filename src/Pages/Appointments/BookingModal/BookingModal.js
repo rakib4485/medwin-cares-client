@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { AuthContext } from '../../../context/AuthProvider';
 
 const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
-  const { name: treatmentName, slots } = treatment; //treatment is just another name of  appointmentOptions with name, slots, _id
+  const { name: treatmentName, slots } = treatment; 
   const date = format(selectedDate, 'PP');
   const { user } = useContext(AuthContext);
 
@@ -24,10 +24,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
       phone,
     }
 
-    //TODO: send data to the server
-    // and once data is saved then close the data and display success toast
-
-    fetch('https://doctors-portal-server-dusky-nu.vercel.app/bookings', {
+    fetch('http://localhost:5000/bookings', {
       method: 'POST',
       headers: {
         'content-type': 'application/json'
@@ -64,7 +61,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
               }
             </select>
             <input name='name' type="text" defaultValue={user?.displayName} disabled placeholder="Full Name" className="input input-bordered w-full" />
-            <input name='email' type="email"   placeholder="Email" className="input input-bordered w-full" />
+            <input name='email' type="email" defaultValue={user?.email} disabled placeholder="Email" className="input input-bordered w-full" />
             <input name='phone' type="text" defaultValue={user?.phone} placeholder="Phone Number" readOnly className="input input-bordered w-full" />
             <input className='btn btn-accent w-full' type="submit" value="Submit" />
           </form>
