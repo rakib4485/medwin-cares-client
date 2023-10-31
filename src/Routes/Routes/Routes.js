@@ -16,6 +16,7 @@ import Appointments from "../../Pages/Appointments/Appointments/Appointments";
 import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import MyAppointment from "../../Pages/Dashboard/MyAppointment/MyAppointment";
+import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -92,7 +93,11 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard',
                 element: <MyAppointment/>
-            }
+            },
+            {
+                path: '/dashboard/allusers',
+                element: <AllUsers/>
+            },
         ]
     },
     {
