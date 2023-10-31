@@ -53,7 +53,7 @@ const ManageDoctors = () => {
             <h1 className='text-3xl'>Manage Doctors</h1>
             <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-[2px] rounded-lg mb-3 w-24"></div>
             <div className="overflow-x-auto">
-                <table className="table">
+                <table className="table text-lg">
                     <thead>
                         <tr>
                             <th></th>

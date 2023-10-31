@@ -51,7 +51,7 @@ const AllUsers = () => {
             <h2 className="text-3xl">Users List</h2>
             <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-[2px] rounded-lg mb-3 w-24"></div>
             <div className="overflow-x-auto">
-  <table className="table w-full">
+  <table className="table w-full text-lg">
     <thead>
       <tr>
         <th></th>
