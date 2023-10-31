@@ -8,32 +8,47 @@ import toast from 'react-hot-toast';
 const SignUp = () => {
   const { register, formState: {errors}, handleSubmit } = useForm();
   const {createUser, updateUser} = useContext(AuthContext);
-  const {signUpError, setSignUpError} = useState('');
+  const [signUpError, setSignUPError] = useState('');
   const navigate = useNavigate();
   
-  const handleSignup = data =>{
-    console.log(data);
-    setSignUpError('');
-    createUser(data.email, data.password)
-    .then(result => {
-      const user = result.user;
-      console.log(user);
-      toast('User Created Successfully');
-      const userInfo = {
-        displayName : data.name
-      }
-      updateUser(userInfo)
-      .then(() =>{
-        navigate('/');
-      })
-      .catch(err => console.log(err));
-
-    })
-    .catch(error => {
-      console.log(error)
-      setSignUpError(error.message);
-    });
+  const handleSignup = (data) =>{
+    setSignUPError('');
+        createUser(data.email, data.password)
+            .then(result => {
+                const user = result.user;
+                console.log(user);
+                toast('User Created Successfully')
+                const userInfo = {
+                    displayName: data.name
+                }
+                updateUser(userInfo)
+                    .then(() => {
+                        saveUser(data.name, data.email);
+                    })
+                    .catch(err => console.log(err));
+            })
+            .catch(error => {
+                console.log(error)
+                setSignUPError(error.message)
+            });
   }
+
+  const saveUser = (name, email) =>{
+    const user = {name, email};
+    fetch('http://localhost:5000/users', {
+      method: 'POST',
+      headers: {
+        'content-type': 'application/json'
+      },
+      body: JSON.stringify(user)
+    })
+    .then(res => res.json())
+    .then(data => {
+      console.log('save user', data);
+      navigate('/');
+    })
+  }
+
     return (
       <div className='mx-[7%]'>
       <div className='my-10 grid grid-cols-1 items-center lg:grid-cols-2'>
