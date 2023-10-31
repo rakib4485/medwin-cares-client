@@ -60,9 +60,10 @@ const AddDoctor = () => {
         return <Loading/>
     }
     return (
-        <div>
+        <div className='bg-gray-200 h-full p-5'>
+            <div className='w-96 p-7 shadow-lg bg-white rounded-md lg:mx-auto'>
             <h1 className="text-3xl">Add a new doctor</h1>
-            <div className='w-96 p-7'>
+            <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-[2px] rounded-lg mb-3 w-24"></div>
                 <form onSubmit={handleSubmit(handleAddDoctor)}>
                     <div className="form-control w-full-max-w-xs">
                         <label className="label"><span className="label-text">Name</span></label>

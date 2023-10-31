@@ -49,8 +49,9 @@ const ManageDoctors = () => {
     }
 
     return (
-        <div>
-            <h1 className='text-3xl'>Manage Doctors: {doctors?.length}</h1>
+        <div className='bg-gray-200 h-full p-5'>
+            <h1 className='text-3xl'>Manage Doctors</h1>
+            <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-[2px] rounded-lg mb-3 w-24"></div>
             <div className="overflow-x-auto">
                 <table className="table">
                     <thead>
