@@ -4,12 +4,19 @@ import signupImg from '../../assests/signup.jpg'
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../context/AuthProvider';
 import toast from 'react-hot-toast';
+import useToken from '../../hooks/useToken';
 
 const SignUp = () => {
   const { register, formState: {errors}, handleSubmit } = useForm();
   const {createUser, updateUser} = useContext(AuthContext);
   const [signUpError, setSignUPError] = useState('');
+  const [createdUserEmail, setCreatedUserEmail] = useState('')
+  const [token] = useToken(createdUserEmail);
   const navigate = useNavigate();
+
+  if(token){
+    navigate('/')
+  }
   
   const handleSignup = (data) =>{
     setSignUPError('');
@@ -44,10 +51,11 @@ const SignUp = () => {
     })
     .then(res => res.json())
     .then(data => {
-      console.log('save user', data);
-      navigate('/');
+      setCreatedUserEmail(email);
     })
   }
+
+  
 
     return (
       <div className='mx-[7%]'>
