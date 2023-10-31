@@ -1,28 +1,25 @@
-import { useQuery } from '@tanstack/react-query';
 import React, { useContext } from 'react';
 import { AuthContext } from '../../../context/AuthProvider';
+import { useQuery } from '@tanstack/react-query';
 
 const MyAppointment = () => {
-    const { user } = useContext(AuthContext);
-    const url = `https://doctors-portal-server-bayaziddeveloper-gmailcom.vercel.app/bookings?email=${user?.email}`;
+    const {user} = useContext(AuthContext);
+    const url = `http://localhost:5000/bookings?email=${user?.email}`;
 
-    const { data: bookings = [] } = useQuery({
+    const {data: bookings = []} = useQuery({
         queryKey: ['bookings', user?.email],
-        queryFn: async () => {
-            const res = await fetch(url, {
-                headers: {
-                    authorization: `bearer ${localStorage.getItem('accessToken')}`
-                }
-            });
+        queryFn: async () =>{
+            const res = await fetch(url);
             const data = await res.json();
             return data;
         }
     })
     return (
         <div>
-            <h3 className="text-3xl mb-5">My Appointments</h3>
-            <div className="overflow-x-auto">
-                <table className="table w-full">
+            <h1 className="text-3xl">My Appointments</h1>
+            <div className="overflow-x-auto mt-3">
+                <table className="table">
+                    {/* head */}
                     <thead>
                         <tr>
                             <th></th>
@@ -33,20 +30,15 @@ const MyAppointment = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {/* {
-                            bookings.map((booking, i) => <tr key={booking._id}>
-                                <th>{i + 1}</th>
+                        {
+                            bookings.map((booking, i) =><tr key={booking._id}>
+                                <th>{i+1}</th>
                                 <td>{booking.patient}</td>
                                 <td>{booking.treatment}</td>
                                 <td>{booking.appointmentDate}</td>
                                 <td>{booking.slot}</td>
                             </tr>)
-                        } */}
-                        <th>1</th>
-                        <td>Md. Bayazid Hossain</td>
-                        <td>Cardiology</td>
-                        <td>Mar 19, 2023</td>
-                        <td>08.00 AM - 08.30 AM</td>
+                        }
                     </tbody>
                 </table>
             </div>
