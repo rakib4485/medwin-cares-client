@@ -21,9 +21,6 @@ const AllDoctorsCard = ({doctor}) => {
                             <Link to='/doctorDetails'>
                                 <ViewButton>View Profile</ViewButton>
                             </Link>
-                            <Link>
-                            <AppointmentButton>Book Appointment</AppointmentButton>
-                            </Link>
                         </div>
                     </div>
                 </article>
