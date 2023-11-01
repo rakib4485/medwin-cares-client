@@ -66,7 +66,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
             </select>
             <input name='name' type="text" defaultValue={user?.displayName} disabled placeholder="Full Name" className="input input-bordered w-full" />
             <input name='email' type="email" defaultValue={user?.email} disabled placeholder="Email" className="input input-bordered w-full" />
-            <input name='phone' type="text" defaultValue={user?.phone} placeholder="Phone Number" readOnly className="input input-bordered w-full" />
+            <input name='phone' type="text" defaultValue={user?.phone} placeholder="Phone Number"  className="input input-bordered w-full" />
           <p className='text-red-500'> Note: You must have to complete the payment for confirm your appointment</p>
             <input className='btn btn-accent w-full' type="submit" value="Submit" />
           </form>
