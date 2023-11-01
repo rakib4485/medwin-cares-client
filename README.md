@@ -3,7 +3,7 @@
 
 
 
-[Live Site](https://linktodocumentatiodddn)
+[Live Site](https://medwin-cares-client.web.app/)
 
 ## Documentation
 
@@ -23,7 +23,6 @@
 - Node.js
 
 - Express.js
-- Json Web Token
 - MongoDB
 
 ## Authentication & Hosting Technologies
