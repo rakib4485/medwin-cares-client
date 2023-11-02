@@ -1,4 +1,42 @@
-**[Live Site](https://medwin-cares-client-umber.vercel.app/)** <br>
+
+# Medwin Cares - Hospital Management System
+
+
+
+[Live Site](https://medwin-cares-client.web.app/)
+
+## Documentation
+
+"Medwin Cares" is a comprehensive hospital management system featuring user and admin dashboards, seamless payment processing, and a patient-centric approach that enables medication purchases.
+## Front-End Technologies
+
+- React.js
+
+- Tailwind CSS
+- Swiper.js
+- React Day Picker
+- React Query
+- React-router-dom
+
+## Back-End Technologies
+
+- Node.js
+
+- Express.js
+- MongoDB
+
+## Authentication & Hosting Technologies
+
+- Firebase
+
+- Vercel
+
+
+## Authors
+
+- [@xbayazid](https://github.com/xbayazid)
+
+
 
 ***Home***
 ![](src/img/home.png)
