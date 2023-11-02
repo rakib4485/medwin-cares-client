@@ -1,6 +1,6 @@
 import { DayPicker } from "react-day-picker";
 import chairbg from "../../../assests/images/bg.png";
-import chair from "../../../assests/images/chair.png"
+import chair from "../../../assests/images/appointment.jpg"
 
 const AppointmentBanner = ({selectedDate, setSelectedDate}) => {
   

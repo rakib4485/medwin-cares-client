@@ -10,7 +10,6 @@ import SignUp from "../../Pages/SignUp/SignUp";
 import Doctors from "../../Pages/Doctors/Doctors";
 import DoctorDetails from "../../Pages/DoctorDetails/DoctorDetails";
 import Shop from "../../Pages/Shop/Shop";
-import Appointment from "../../Pages/Appointment/Appointment";
 import Departments from "../../Pages/Departments/Departments";
 import Appointments from "../../Pages/Appointments/Appointments/Appointments";
 import DashboardLayout from "../../Layout/DashboardLayout/DashboardLayout";
@@ -48,10 +47,6 @@ const router = createBrowserRouter([
                 path: '/doctorDetails',
                 element: <DoctorDetails/>
             },
-            // {
-            //     path: '/appointment',
-            //     element: <Appointment/>
-            // },
             {
                 path: '/appointments',
                 element: <PrivateRoute><Appointments/></PrivateRoute>
