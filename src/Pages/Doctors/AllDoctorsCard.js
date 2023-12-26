@@ -1,10 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import ViewButton from '../../components/ViewButton/ViewButton';
-import AppointmentButton from '../../components/AppointmentButton/AppointmentButton';
 
-const AllDoctorsCard = ({ doctor }) => {
-    const { id, name, image, specialty } = doctor
+const AllDoctorsCard = ({ appointmentOption }) => {
+    const { id, name, image, specialty } = appointmentOption
     return (
         <div>
             <div>

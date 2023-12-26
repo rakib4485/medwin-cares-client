@@ -21,6 +21,7 @@ const AddDoctor = () => {
     })
     const handleAddDoctor = data => {
         const image = data.image[0];
+        console.log(image);
         const formData = new FormData();
         formData.append('image', image);
         const url = `https://api.imgbb.com/1/upload?key=${imageHostKey}`
@@ -33,13 +34,33 @@ const AddDoctor = () => {
             if(imgData.success){
                 console.log(imgData.data.url);
                 const doctor = {
-                    name: data.name,
+                    names: data.name,
                     email: data.email,
                     specialty: data.specialty,
-                    image: imgData.data.url
+                    image: imgData.data.url,
+                    meet: data.meet,
+                    prices: 500,
+                    slots: [
+                        "08.00 AM - 08.30 AM",
+                        "08.30 AM - 09.00 AM",
+                        "09.00 AM - 9.30 AM",
+                        "09.30 AM - 10.00 AM",
+                        "10.00 AM - 10.30 AM",
+                        "10.30 AM - 11.00 AM",
+                        "11.00 AM - 11.30 AM",
+                        "11.30 AM - 12.00 AM",
+                        "1.00 PM - 1.30 PM",
+                        "1.30 PM - 2.00 PM",
+                        "2.00 PM - 2.30 PM",
+                        "2.30 PM - 3.00 PM",
+                        "3.00 PM - 3.30 PM",
+                        "3.30 PM - 4.00 PM",
+                        "4.00 PM - 4.30 PM",
+                        "4.30 PM - 5.00 PM"
+                      ]
                 }
 
-                fetch('https://medwin-cares-server-two.vercel.app/doctors',{
+                fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/appointmentOptions',{
                     method: 'POST',
                     headers: {
                         'content-type': 'application/json',
@@ -51,7 +72,7 @@ const AddDoctor = () => {
                 .then(result =>{
                     console.log(result);
                     toast.success(`${data.name} is added successfully`);
-                    navigate('/dashboard/managedoctors');
+                    // navigate('/dashboard/managedoctors');
                 })
             }
         })
@@ -74,6 +95,11 @@ const AddDoctor = () => {
                         <label className="label"><span className="label-text">Email</span></label>
                         <input {...register("email", { required: "Email Address is required" })} type="text" className="input input-bordered w-full max-w-xs" />
                         {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
+                    </div>
+                    <div className="form-control w-full max-w-xs">
+                        <label className="label"><span className="label-text">Google Meet Link</span></label>
+                        <input {...register("meet", { required: "Google Meet link is required" })} type="text" className="input input-bordered w-full max-w-xs" />
+                        {errors.meet && <p className='text-red-600'>{errors.meet?.message}</p>}
                     </div>
                     <div className="form-control w-full max-w-xs">
                         <label className="label"><span className="label-text">Specialty</span></label>

@@ -15,7 +15,7 @@ const ManageProduct = () => {
         queryKey: ['shop'],
         queryFn: async () => {
             try {
-                const res = await fetch('http://localhost:5000/shop', {
+                const res = await fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/shop', {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -30,7 +30,7 @@ const ManageProduct = () => {
     })
 
     const handleDeleteProduct = product => {
-        fetch(`http://localhost:5000/shop/${product._id}`, {
+        fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/shop/${product._id}`, {
             method: 'DELETE', 
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`

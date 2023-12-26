@@ -26,7 +26,7 @@ const AddProduct = () => {
                 price: data.price,
                 image: imgData.data.url
             }
-           fetch('http://localhost:5000/shop',{
+           fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/shop',{
             method: 'POST',
             headers: {
                 'content-type': 'application/json',

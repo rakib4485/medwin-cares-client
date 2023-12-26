@@ -10,11 +10,11 @@ const ManageDoctors = () => {
     const closeModal = () => {
         setDeletingDoctor(null);
     }
-    const { data: doctors, isLoading, refetch} = useQuery({
-        queryKey: ['doctors'],
+    const { data: appointmentOptions, isLoading, refetch} = useQuery({
+        queryKey: ['appointmentOptions'],
         queryFn: async () => {
             try {
-                const res = await fetch('https://medwin-cares-server-two.vercel.app/doctors', {
+                const res = await fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/appointmentOptions', {
                     headers: {
                         authorization: `bearer ${localStorage.getItem('accessToken')}`
                     }
@@ -28,8 +28,8 @@ const ManageDoctors = () => {
         }
     })
 
-    const handleDeleteDoctor = doctor => {
-        fetch(`https://medwin-cares-server-two.vercel.app/doctors/${doctor._id}`, {
+    const handleDeleteDoctor = appointmentOption => {
+        fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/appointmentOptions/${appointmentOption._id}`, {
             method: 'DELETE', 
             headers: {
                 authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -39,7 +39,7 @@ const ManageDoctors = () => {
         .then(data => {
             if(data.deletedCount > 0){
                 refetch();
-                toast.success(`Doctor ${doctor.name} deleted successfully`)
+                toast.success(`Doctor ${appointmentOption.names} deleted successfully`)
             }
         })
     }
@@ -66,19 +66,19 @@ const ManageDoctors = () => {
                     </thead>
                     <tbody>
                         {
-                            doctors &&
-                            doctors.map((doctor, i) => <tr key={doctor._id}>
+                            appointmentOptions &&
+                            appointmentOptions.map((appointmentOption, i) => <tr key={appointmentOption._id}>
                                 <th>{i + 1}</th>
                                 <td><div className="avatar">
                                     <div className="w-24 rounded-full">
-                                        <img src={doctor.image} alt=''/>
+                                        <img src={appointmentOption.image} alt=''/>
                                     </div>
                                 </div>
                                 </td>
-                                <td>{doctor.name}</td>
-                                <td>{doctor.email}</td>
-                                <td>{doctor.specialty}</td>
-                               <td><label onClick={() => setDeletingDoctor(doctor)} htmlFor="confirmation-modal" className="btn btn-xs btn-error">Delete</label></td>
+                                <td>{appointmentOption.names}</td>
+                                <td>{appointmentOption.email}</td>
+                                <td>{appointmentOption.name}</td>
+                               <td><label onClick={() => setDeletingDoctor(appointmentOption)} htmlFor="confirmation-modal" className="btn btn-xs btn-error">Delete</label></td>
                             </tr>)
                         }
                     </tbody>
@@ -87,7 +87,7 @@ const ManageDoctors = () => {
             {
                 deletingDoctor && <ConfirmationModal
                     title={`Are you sure you want to delete?`}
-                    message={`If you delete ${deletingDoctor.name}. It cannot be undone.`}
+                    message={`If you delete ${deletingDoctor.names}. It cannot be undone.`}
                     successAction = {handleDeleteDoctor}
                     successButtonName="Delete"
                     modalData = {deletingDoctor}

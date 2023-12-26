@@ -4,15 +4,15 @@ import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
 
 const Specialist = () => {
-    const { data: doctors = [] } = useQuery({
-        queryKey: ['doctors'],
+    const { data: appointments = [] } = useQuery({
+        queryKey: ['appointments'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/doctors');
+            const res = await fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/appointmentOptions');
             const data = await res.json();
             return data;
         }
     })
-    const doctorSlice = doctors.slice(0,3)
+    const doctorSlice = appointments.slice(0,3)
     return (
         <div className='my-8 mx-[7%]'>
             <div className='text-center'>

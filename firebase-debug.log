@@ -1,0 +1,34 @@
+[debug] [2023-12-26T10:32:29.793Z] ----------------------------------------------------------------------
+[debug] [2023-12-26T10:32:29.797Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\ASUS\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-12-26T10:32:29.797Z] CLI Version:   12.9.1
+[debug] [2023-12-26T10:32:29.798Z] Platform:      win32
+[debug] [2023-12-26T10:32:29.798Z] Node Version:  v16.16.0
+[debug] [2023-12-26T10:32:29.806Z] Time:          Tue Dec 26 2023 16:32:29 GMT+0600 (Bangladesh Standard Time)
+[debug] [2023-12-26T10:32:29.806Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-12-26T10:32:29.812Z] >>> [apiv2][query] GET https://firebase-public.firebaseio.com/cli.json [none]
+[debug] [2023-12-26T10:32:29.963Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-12-26T10:32:29.964Z] > authorizing via signed-in user (abdul15-3124@diu.edu.bd)
+[debug] [2023-12-26T10:32:29.964Z] [iam] checking project medwin-cares-client for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-12-26T10:32:29.966Z] > refreshing access token with scopes: []
+[debug] [2023-12-26T10:32:29.967Z] >>> [apiv2][query] POST https://www.googleapis.com/oauth2/v3/token [none]
+[debug] [2023-12-26T10:32:29.967Z] >>> [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-26T10:32:30.303Z] <<< [apiv2][status] POST https://www.googleapis.com/oauth2/v3/token 200
+[debug] [2023-12-26T10:32:30.303Z] <<< [apiv2][body] POST https://www.googleapis.com/oauth2/v3/token [omitted]
+[debug] [2023-12-26T10:32:30.348Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/medwin-cares-client:testIamPermissions [none]
+[debug] [2023-12-26T10:32:30.348Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/medwin-cares-client:testIamPermissions x-goog-quota-user=projects/medwin-cares-client
+[debug] [2023-12-26T10:32:30.349Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/medwin-cares-client:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-12-26T10:32:30.670Z] <<< [apiv2][status] GET https://firebase-public.firebaseio.com/cli.json 200
+[debug] [2023-12-26T10:32:30.670Z] <<< [apiv2][body] GET https://firebase-public.firebaseio.com/cli.json {"cloudBuildErrorAfter":1594252800000,"cloudBuildWarnAfter":1590019200000,"defaultNode10After":1594252800000,"minVersion":"3.0.5","node8DeploysDisabledAfter":1613390400000,"node8RuntimeDisabledAfter":1615809600000,"node8WarnAfter":1600128000000}
+[debug] [2023-12-26T10:32:31.881Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/medwin-cares-client:testIamPermissions 200
+[debug] [2023-12-26T10:32:31.881Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/medwin-cares-client:testIamPermissions {}
+[debug] [2023-12-26T10:32:31.881Z] [iam] error while checking permissions, command may fail: FirebaseError: Authorization failed. This account is missing the following required permissions on project medwin-cares-client:
+
+  firebase.projects.get
+  firebasehosting.sites.update
+[debug] [2023-12-26T10:32:31.883Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/medwin-cares-client [none]
+[debug] [2023-12-26T10:32:32.479Z] <<< [apiv2][status] GET https://firebase.googleapis.com/v1beta1/projects/medwin-cares-client 403
+[debug] [2023-12-26T10:32:32.479Z] <<< [apiv2][body] GET https://firebase.googleapis.com/v1beta1/projects/medwin-cares-client {"error":{"code":403,"message":"The caller does not have permission","status":"PERMISSION_DENIED"}}
+[debug] [2023-12-26T10:32:32.481Z] HTTP Error: 403, The caller does not have permission
+[error] 
+[error] Error: Assertion failed: resolving hosting target of a site with no site name or target name. This should have caused an error earlier

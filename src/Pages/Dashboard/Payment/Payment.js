@@ -26,6 +26,11 @@ const Payment = () => {
                   <CheckoutForm booking={booking} />
                 </Elements>
             </div>
+
+            <div>
+                <label htmlFor="">bKash Number</label>
+                input:t
+            </div>
         </div>
     );
 };

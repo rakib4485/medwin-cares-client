@@ -23,6 +23,9 @@ import Payment from "../../Pages/Dashboard/Payment/Payment";
 import DisplayError from "../../Shared/DisplayError/DisplayError";
 import AddProduct from "../../Pages/Dashboard/AddProduct/AddProduct";
 import ManageProduct from "../../Pages/Dashboard/ManageProduct/ManageProduct";
+import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
+import MDoctors from "../../Pages/Dashboard/MDoctors/MDoctors";
+import Products from "../../Pages/Dashboard/Products/Products";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -57,7 +60,7 @@ const router = createBrowserRouter([
                 path: '/departments/:id',
                 element: <Departments/>,
                 loader: ({params}) =>{
-                    return fetch(`http://localhost:5000/departments/${params.id}`);
+                    return fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/departments/${params.id}`);
                 }
             },
         ]
@@ -102,20 +105,20 @@ const router = createBrowserRouter([
                 element: <MyAppointment/>
             },
             {
+                path: '/dashboard/myorders',
+                element: <MyOrders/>
+            },
+            {
                 path: '/dashboard/allusers',
                 element: <AdminRoutes><AllUsers/></AdminRoutes>
             },
             {
-                path: '/dashboard/adddoctors',
-                element: <AdminRoutes><AddDoctor/></AdminRoutes>
+                path: '/dashboard/doctors',
+                element: <AdminRoutes><MDoctors/></AdminRoutes>
             },
             {
-                path: '/dashboard/managedoctors',
-                element: <AdminRoutes><ManageDoctors/></AdminRoutes>
-            },
-            {
-                path: '/dashboard/addproduct',
-                element: <AdminRoutes><AddProduct/></AdminRoutes>
+                path: '/dashboard/products',
+                element: <AdminRoutes><Products/></AdminRoutes>
             },
             {
                 path: '/dashboard/manageproduct',

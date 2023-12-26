@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 const MyAppointment = () => {
     const { user } = useContext(AuthContext);
 
+
     const url = `https://medwin-cares-server-two.vercel.app/bookings?email=${user?.email}`;
 
     const { data: bookings = [], isLoading } = useQuery({
@@ -36,9 +37,10 @@ const MyAppointment = () => {
                         <tr>
                             <th></th>
                             <th>Name</th>
-                            <th>Treatment</th>
+                            <th>Doctor Name</th>
                             <th>Date</th>
                             <th>Time</th>
+                            <th>Meet Link</th>
                             <th>Amount</th>
                             <th>Payment</th>
                         </tr>
@@ -51,15 +53,23 @@ const MyAppointment = () => {
                                 <td>{booking.treatment}</td>
                                 <td>{booking.appointmentDate}</td>
                                 <td>{booking.slot}</td>
-                                <td>{booking.price} BDT</td>
                                 <td>
                                     {
-                                       booking.price && !booking.paid && <Link to={`/dashboard/payment/${booking._id}`}>
+                                        booking.prices && !booking.pad && <p><small>After payment you will get the meet link automatically</small></p>
+                                    }
+                                    {
+                                        booking.prices && booking.paid && <p>{booking.meet}</p>
+                                    }
+                                </td>
+                                <td>{booking.prices} BDT</td>
+                                <td>
+                                    {
+                                       booking.prices && !booking.paid && <Link to={`/dashboard/payment/${booking._id}`}>
                                        <button className='btn btn-primary btn-sm uppercase'>Pay</button> 
                                        </Link>
                                     }
                                     {
-                                        booking.price && booking.paid && <span className='text-primary'>Paid</span>
+                                        booking.prices && booking.paid && <span className='text-primary'>Paid</span>
                                     }
                                 </td>
                             </tr>)

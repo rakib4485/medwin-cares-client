@@ -16,7 +16,7 @@ const Department = () => {
     const {data: departments = []} = useQuery({
         queryKey: ['departments'],
         queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/departments');
+            const res = await fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/departments');
             const data = await res.json();
             return data;
         }

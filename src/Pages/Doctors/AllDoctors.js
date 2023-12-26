@@ -6,18 +6,22 @@ import teamFour from '../../assests/team-4.jpg';
 import AllDoctorsCard from './AllDoctorsCard';
 import { Link } from 'react-router-dom';
 import { useQuery } from '@tanstack/react-query';
+import Loading from '../../Shared/Loading/Loading';
 
 const AllDoctors = () => {
-    const { data: doctors = [] } = useQuery({
-        queryKey: ['doctors'],
+    const { data: appointmentOptions = [], isLoading } = useQuery({
+        queryKey: ['appointmentOptions'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/doctors');
+            const res = await fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/appointmentOptions');
             const data = await res.json();
             return data;
         }
     })
     const [search, setSearch] = useState('');
     console.log(search)
+    if(isLoading){
+        return <Loading/>
+    }
     return (
         <div>
             <div className='my-4'>
@@ -33,11 +37,11 @@ const AllDoctors = () => {
             <div>
                 <div class="container mx-auto p-10 md:p-20 grid gap-6 lg:grid-cols-2 2xl:grid-cols-3 grid-cols-1 gap-x-3 transform duration-500">
                     {
-                        doctors.filter((doctor) => {
-                            return search.toLowerCase() === '' ? doctor : doctor.specialty.toLowerCase().includes(search)
-                        }).map(doctor => <AllDoctorsCard
-                            key={doctor.id}
-                            doctor={doctor}
+                        appointmentOptions.filter((appointmentOption) => {
+                            return search.toLowerCase() === '' ? appointmentOption : appointmentOption.specialty.toLowerCase().includes(search)
+                        }).map(appointmentOption => <AllDoctorsCard
+                            key={appointmentOption.id}
+                            doctor={appointmentOption}
                         ></AllDoctorsCard>)
                     }
                 </div>

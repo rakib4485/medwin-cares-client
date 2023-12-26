@@ -8,7 +8,7 @@ const ShopDetails = () => {
     const {data: shop = []} = useQuery({
         queryKey: ['shop'],
         queryFn: async() =>{
-            const res = await fetch('http://localhost:5000/shop');
+            const res = await fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/shop');
             const data = await res.json();
             return data;
         }

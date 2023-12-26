@@ -5,7 +5,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
-  const { name: treatmentName, slots, price } = treatment; 
+  const { names: treatmentName, slots, prices, meet } = treatment; 
   const date = format(selectedDate, 'PP');
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -24,7 +24,8 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
       slot,
       email,
       phone,
-      price
+      prices,
+      meet
     }
 
     fetch('https://medwin-cares-server-two.vercel.app/bookings', {
