@@ -10,50 +10,17 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { FreeMode, Autoplay } from 'swiper/modules';
+import { useQuery } from '@tanstack/react-query';
 
 const Department = () => {
-    const departments = [
-        {
-            id: 1,
-            departmentName: "Dental",
-            img: "https://i.ibb.co/XWP3Ts1/department-1.jpg"
-        },
-        {
-            id: 2,
-            departmentName: "Orthopedics",
-            img: "https://i.ibb.co/HTHHWCj/department-2.jpg"
-        },
-        {
-            id: 3,
-            departmentName: "Neuroscience",
-            img: "https://i.ibb.co/94bXt7K/department-3.jpg"
-        },
-        {
-            id: 4,
-            departmentName: "Cancer Care",
-            img: "https://i.ibb.co/FzH5nTZ/department-4.jpg"
-        },
-        {
-            id: 5,
-            departmentName: "Gastroenterology",
-            img: "https://i.ibb.co/8bhdtBD/department-5.jpg"
-        },
-        {
-            id: 6,
-            departmentName: "Medicine",
-            img: "https://i.ibb.co/XSN9zT1/department-6.jpg"
-        },
-        {
-            id: 7,
-            departmentName: "Cardiology",
-            img: "https://i.ibb.co/dW4NWrr/department-7.jpg"
-        },
-        {
-            id: 8,
-            departmentName: "Surgery",
-            img: "https://i.ibb.co/WHwxhbP/department-8.jpg"
-        },
-    ]
+    const {data: departments = []} = useQuery({
+        queryKey: ['departments'],
+        queryFn: async() =>{
+            const res = await fetch('http://localhost:5000/departments');
+            const data = await res.json();
+            return data;
+        }
+    })
     return (
         <div className='my-11 mx-[7%]'>
             <div className="text-center">

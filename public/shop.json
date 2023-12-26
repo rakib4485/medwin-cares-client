@@ -1,0 +1,44 @@
+[
+    {
+        "departmentName": "Dental",
+        "img": "https://i.ibb.co/XWP3Ts1/department-1.jpg",
+        "details": [
+            {
+                "title": "What is dental?",
+                "titleParagraph": "Dentistry, commonly referred to as dental care, is a branch of medicine focused on the study, diagnosis, prevention, and treatment of conditions and disorders related to oral health. Dental professionals, such as dentists and dental hygienists, work to maintain and restore oral hygiene, treating issues like cavities, gum disease, and tooth decay. Regular dental check-ups are essential for preventive care, including cleanings and examinations. Dental practices often involve the use of specialized tools and equipment to address various oral concerns. Oral health is integral to overall well-being, as it can impact speech, nutrition, and self-esteem. Practicing good oral hygiene, including regular brushing and flossing, is key to preventing dental problems.",
+                "semiTitle": "What do dentist treat?",
+                "semiTitleParagraph": "Dentists diagnose and treat oral health issues, such as cavities and gum disease. They perform routine cleanings and preventive care to maintain dental health. Dentists may extract teeth and provide restorative procedures like fillings and crowns. They offer guidance on proper oral hygiene practices for patients. Dentists also conduct examinations, including X-rays, to assess overall dental health. In addition, they may specialize in areas such as orthodontics, oral surgery, or pediatric dentistry.",
+                "speciality": "A periodontist specializes in treating gum diseases and conditions affecting the supporting structures of the teeth. Endodontists focus on root canal therapy, addressing issues within the tooth pulp. Orthodontists specialize in correcting misalignments and bite issues using braces or aligners. Oral surgeons perform surgical procedures such as tooth extractions, jaw surgeries, and implant placements. Prosthodontists concentrate on the restoration and replacement of damaged or missing teeth, often through crowns, bridges, and dentures. Pediatric dentists cater specifically to the dental needs of children, providing preventive and therapeutic care tailored to young patients.",
+                "treatment": "Maintain good oral hygiene by brushing your teeth twice a day and flossing regularly to prevent dental problems.Visit your dentist for regular check-ups and cleanings to catch any issues early on. If you experience tooth pain or sensitivity, consult your dentist promptly to address the underlying problem. Follow a balanced diet, limiting sugary and acidic foods to prevent tooth decay and erosion. In case of a dental emergency, such as a knocked-out tooth, seek immediate professional help for the best chance of successful treatment. Consider preventive measures like dental sealants and fluoride treatments as recommended by your dentist to protect your teeth from potential issues."
+            }
+        ]
+    },
+    {
+        "departmentName": "Orthopedics",
+        "img": "https://i.ibb.co/HTHHWCj/department-2.jpg"
+    },
+    {
+        "departmentName": "Neuroscience",
+        "img": "https://i.ibb.co/94bXt7K/department-3.jpg"
+    },
+    {
+        "departmentName": "Cancer Care",
+        "img": "https://i.ibb.co/FzH5nTZ/department-4.jpg"
+    },
+    {
+        "departmentName": "Gastroenterology",
+        "img": "https://i.ibb.co/8bhdtBD/department-5.jpg"
+    },
+    {
+        "departmentName": "Medicine",
+        "img": "https://i.ibb.co/XSN9zT1/department-6.jpg"
+    },
+    {
+        "departmentName": "Cardiology",
+        "img": "https://i.ibb.co/dW4NWrr/department-7.jpg"
+    },
+    {
+        "departmentName": "Surgery",
+        "img": "https://i.ibb.co/WHwxhbP/department-8.jpg"
+    }
+]

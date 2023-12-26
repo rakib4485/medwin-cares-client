@@ -19,6 +19,8 @@ body {
   font-family: 'Amiri', serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background: linear-gradient(to bottom, #3494e6, #ec6ead); */
+  
 }
 
 code {
