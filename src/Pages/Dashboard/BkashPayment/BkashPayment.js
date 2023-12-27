@@ -1,35 +1,37 @@
-import React, { useContext } from 'react';
-import { AuthContext } from '../../../context/AuthProvider';
 import { useQuery } from '@tanstack/react-query';
-import Loading from '../../../Shared/Loading/Loading';
+import React from 'react';
 import { Link } from 'react-router-dom';
 
-const MyAppointment = () => {
-    const { user } = useContext(AuthContext);
-
-
-    const url = `https://medwin-cares-server-two.vercel.app/bookings?email=${user?.email}`;
-
-    const { data: bookings = [], isLoading } = useQuery({
-        queryKey: ['bookings', user?.email],
+const BkashPayment = () => {
+    const {data: bookings = [], refetch} = useQuery({
+        queryKey: ['booking'],
         queryFn: async () => {
-            const res = await fetch(url, {
+            const res = await fetch('http://localhost:5000/allbookings',{
                 headers: {
-                   authorization: `bearer ${localStorage.getItem('accessToken')}` 
-                }
+                    'content-type': 'application/json',
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                },
             });
-            const data = await res.json();
+            const data = await res.json()
             return data;
         }
     })
 
-    console.log(bookings)
-
-    
-    if(isLoading){
-       return <Loading/>
+    const handleReceived = (id) => {
+        fetch(`http://localhost:5000/payments?id=${id}`, {
+                method: 'PUT',
+                headers: {
+                    'content-type': 'application/json',
+                    authorization: `bearer ${localStorage.getItem('accessToken')}`
+                },
+            })
+                .then(res => res.json())
+                .then(data => { 
+                    console.log(data)
+                    refetch();
+                })
     }
-
+    console.log(bookings)
     return (
         <div className='bg-gray-200 h-full p-5'>
             <h3 className="text-3xl">My Appointments</h3>
@@ -43,36 +45,29 @@ const MyAppointment = () => {
                             <th>Doctor Name</th>
                             <th>Date</th>
                             <th>Time</th>
-                            <th>Meet Link</th>
                             <th>Amount</th>
-                            <th>Payment</th>
+                            <th>Transaction Id</th>
+                            <th>Action</th>
                         </tr>
                     </thead>
                     <tbody>
                         {   bookings && 
-                            bookings.map((booking, i) => <tr key={booking._id}>
+                            [...bookings].reverse().map((booking, i) => <tr key={booking._id}>
                                 <th>{i+1}</th>
                                 <td>{booking.patient}</td>
                                 <td>{booking.treatment}</td>
                                 <td>{booking.appointmentDate}</td>
                                 <td>{booking.slot}</td>
-                                <td>
-                                    {
-                                        booking.prices && !booking.pad && <p><small>After payment you will get the meet link automatically</small></p>
-                                    }
-                                    {
-                                        booking.prices && booking.paid && <p>{booking.meet}</p>
-                                    }
-                                </td>
+                                
                                 <td>{booking.prices} BDT</td>
+                                <td>{booking.transactionId}</td>
                                 <td>
                                     {
-                                       booking.prices && !booking.paid && <Link to={`/dashboard/payment/${booking._id}`}>
-                                       <button className='btn btn-primary btn-sm uppercase'>Pay</button> 
-                                       </Link>
+                                       booking.prices && !booking.paid && 
+                                       <span className='text-primary'>Not Paid Yet</span>
                                     }
                                     {
-                                        booking.prices && booking.paid === 'pending' && <span className='text-primary'>Pending Verify</span>
+                                        booking.prices && booking.paid === 'pending' && <span className='btn btn-primary btn-sm uppercase' onClick={() => handleReceived(booking._id)}>Received</span>
                                     }
                                     {
                                         booking.prices && (booking.paid === 'true' || booking.paid === true) && <span className='text-primary'>Paid</span>
@@ -87,4 +82,4 @@ const MyAppointment = () => {
     );
 };
 
-export default MyAppointment;
+export default BkashPayment;

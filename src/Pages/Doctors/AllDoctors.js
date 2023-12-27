@@ -17,6 +17,7 @@ const AllDoctors = () => {
             return data;
         }
     })
+    console.log(appointmentOptions)
     const [search, setSearch] = useState('');
     console.log(search)
     if(isLoading){

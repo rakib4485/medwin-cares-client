@@ -76,7 +76,7 @@ const CheckoutForm = ({ booking }) => {
                 email,
                 bookingId: _id
             }
-            fetch('https://medwin-cares-server-two.vercel.app/payments', {
+            fetch('https://medwin-cares-server-two.vercel.app/payments?method=card', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json',
