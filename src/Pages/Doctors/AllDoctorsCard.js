@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const AllDoctorsCard = ({ appointmentOption }) => {
-    const { id, name, image, specialty } = appointmentOption
+const AllDoctorsCard = ({ doctor }) => {
+    const { id, name, image, specialty } = doctor
     return (
         <div>
             <div>
