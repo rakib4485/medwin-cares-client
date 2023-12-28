@@ -9,7 +9,7 @@ import useToken from '../../hooks/useToken';
 const Login = () => {
   const { register, formState: {errors}, handleSubmit } = useForm();
   const [loginError, setLoginError] = useState(''); 
-  const {signIn} = useContext(AuthContext);
+  const {signIn, googleSignIn} = useContext(AuthContext);
   const [loginUserEmail, setLoginUserEmail] = useState('');
   const [token] = useToken(loginUserEmail);
   const location = useLocation();
@@ -34,6 +34,19 @@ const Login = () => {
       setLoginError(error.message);
     });
   }
+
+  const handleGoogleSignIn = () => {
+    googleSignIn()
+    .then(result => {
+        const user = result.user;
+        console.log(user);
+        setLoginUserEmail(user.email);
+        navigate(from, {replace: true})
+    })
+    .catch(err => {
+        console.error(err);
+    })
+}
 
   return (
     <div className='mx-[7%]'>
@@ -73,7 +86,7 @@ const Login = () => {
           </form>
           <p>New to Medwin Cares? <Link to='/signup' className='text-blue-700'>Create an account</Link></p>
           <div className="divider">OR</div>
-          <button className='uppercase w-full btn btn-outline'>continue with google</button>
+          <button onClick={handleGoogleSignIn} className='uppercase w-full btn btn-outline'>continue with google</button>
           </div>
         </div>
         <div className='hidden lg:block'>

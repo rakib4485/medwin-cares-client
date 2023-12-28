@@ -39,7 +39,7 @@ const AllDoctors = () => {
                 <div class="container mx-auto p-10 md:p-20 grid gap-6 lg:grid-cols-2 2xl:grid-cols-3 grid-cols-1 gap-x-3 transform duration-500">
                     {
                         appointmentOptions.filter((appointmentOption) => {
-                            return search.toLowerCase() === '' ? appointmentOption : appointmentOption.specialty.toLowerCase().includes(search)
+                            return search.toLowerCase() === '' ? appointmentOption : appointmentOption.names.toLowerCase().includes(search)
                         }).map(appointmentOption => <AllDoctorsCard
                             key={appointmentOption.id}
                             doctor={appointmentOption}

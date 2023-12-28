@@ -131,7 +131,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/dashboard/payment/:id',
-                element: <AdminRoutes><Payment/></AdminRoutes>,
+                element: <Payment/>,
                 loader: ({params}) => fetch(`https://medwin-cares-server-two.vercel.app/bookings/${params.id}`)
             },
         ]
