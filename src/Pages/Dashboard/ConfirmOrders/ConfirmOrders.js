@@ -1,11 +1,10 @@
 import React from 'react';
 
-const MyOrders = () => {
+const ConfirmOrders = () => {
     return (
         <div className='bg-gray-200 h-full p-5'>
-           <h2 className="text-3xl">My Orders</h2>
+            <h3 className="text-3xl">Orders Confirmation</h3>
             <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-[2px] rounded-lg mb-3 w-24"></div>
-
             <div className="overflow-x-auto">
   <table className="table">
     {/* head */}
@@ -18,7 +17,8 @@ const MyOrders = () => {
         <th>Product Name</th>
         <th>Price</th>
         <th>Delivery Type</th>
-        <th>Payment Status</th>
+        <th>Transaction Id</th>
+        <th>Action</th>
       </tr>
     </thead>
     <tbody>
@@ -50,4 +50,4 @@ const MyOrders = () => {
     );
 };
 
-export default MyOrders;
+export default ConfirmOrders;

@@ -27,6 +27,9 @@ import MyOrders from "../../Pages/Dashboard/MyOrders/MyOrders";
 import MDoctors from "../../Pages/Dashboard/MDoctors/MDoctors";
 import Products from "../../Pages/Dashboard/Products/Products";
 import BkashPayment from "../../Pages/Dashboard/BkashPayment/BkashPayment";
+import ConfirmOrders from "../../Pages/Dashboard/ConfirmOrders/ConfirmOrders";
+import CreateUser from "../../Pages/Dashboard/CreateUser/CreateUser";
+import Confirms from "../../Pages/Dashboard/Confirms/Confirms";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -118,6 +121,10 @@ const router = createBrowserRouter([
                 element: <AdminRoutes><MDoctors/></AdminRoutes>
             },
             {
+                path: '/dashboard/confirmation',
+                element: <AdminRoutes><Confirms/></AdminRoutes>
+            },
+            {
                 path: '/dashboard/products',
                 element: <AdminRoutes><Products/></AdminRoutes>
             },
@@ -126,8 +133,16 @@ const router = createBrowserRouter([
                 element: <AdminRoutes><ManageProduct/></AdminRoutes>
             },
             {
+                path: '/dashboard/createuser',
+                element: <PrivateRoute><CreateUser/></PrivateRoute>
+            },
+            {
                 path: '/dashboard/confirmpayment',
                 element: <AdminRoutes><BkashPayment/></AdminRoutes>
+            },
+            {
+                path: '/dashboard/confirmorders',
+                element: <AdminRoutes><ConfirmOrders/></AdminRoutes>
             },
             {
                 path: '/dashboard/payment/:id',

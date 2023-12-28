@@ -20,8 +20,8 @@ const AllDoctors = () => {
     console.log(appointmentOptions)
     const [search, setSearch] = useState('');
     console.log(search)
-    if(isLoading){
-        return <Loading/>
+    if (isLoading) {
+        return <Loading />
     }
     return (
         <div>
@@ -30,9 +30,16 @@ const AllDoctors = () => {
                     <h1 className='text-4xl font-bold'>Find a Doctor</h1>
                     <p className='text-2xl'>Find a healthcare provider at Medwin Cares</p>
 
-                    <div className='my-3'>
+                    {/* <div className='my-3'>
                         <input type="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search by the doctor specialist area.." className="input input-bordered input-primary w-full max-w-xs" />
-                    </div>
+                    </div> */}
+                    <label class="relative flex justify-center my-3">
+                        <span class="sr-only">Search</span>
+                        <span class="absolute inset-y-0 left-0 flex items-center pl-2">
+                            <svg class="h-5 w-5 fill-slate-300" viewBox="0 0 20 20"></svg>
+                        </span>
+                        <input onChange={(e) => setSearch(e.target.value)} class="placeholder:italic placeholder:text-slate-400 block bg-white w-full border border-slate-300 rounded-md py-2 pl-9 pr-3 shadow-sm focus:outline-none focus:border-sky-500 focus:ring-sky-500 focus:ring-1 sm:text-sm max-w-xs" placeholder="Search by specialist area..." type="text" name="search" />
+                    </label>
                 </div>
             </div>
             <div>

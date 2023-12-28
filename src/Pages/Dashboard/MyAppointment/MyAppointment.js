@@ -58,9 +58,6 @@ const MyAppointment = () => {
                                 <td>{booking.slot}</td>
                                 <td>
                                     {
-                                        booking.prices && !booking.pad && <p><small>After payment you will get the meet link automatically</small></p>
-                                    }
-                                    {
                                         booking.prices && booking.paid && <p>{booking.meet}</p>
                                     }
                                 </td>

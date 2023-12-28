@@ -34,7 +34,7 @@ const BkashPayment = () => {
     console.log(bookings)
     return (
         <div className='bg-gray-200 h-full p-5'>
-            <h3 className="text-3xl">My Appointments</h3>
+            <h3 className="text-3xl">Appointment Confirmation</h3>
             <div className="bg-gradient-to-r from-cyan-500 to-blue-500 py-[2px] rounded-lg mb-3 w-24"></div>
             <div className="overflow-x-auto">
                 <table className="table w-full text-lg">
