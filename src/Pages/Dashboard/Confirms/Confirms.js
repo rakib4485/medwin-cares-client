@@ -2,6 +2,7 @@ import React from 'react';
 import * as Tabs from '@radix-ui/react-tabs';
 import BkashPayment from '../BkashPayment/BkashPayment';
 import ConfirmOrders from '../ConfirmOrders/ConfirmOrders';
+import DoctorReqeust from '../DoctorReqeust/DoctorReqeust';
 
 const Confirms = () => {
     return (
@@ -14,12 +15,18 @@ const Confirms = () => {
                     <Tabs.Trigger className="TabsTrigger" value="tab2">
                         Confirm Order
                     </Tabs.Trigger>
+                    <Tabs.Trigger className="TabsTrigger" value="tab3">
+                        Confirm Doctor Request
+                    </Tabs.Trigger>
                 </Tabs.List>
                 <Tabs.Content className="TabsContent" value="tab1">
                     <BkashPayment />
                 </Tabs.Content>
                 <Tabs.Content className="TabsContent" value="tab2">
                     <ConfirmOrders />
+                </Tabs.Content>
+                <Tabs.Content className="TabsContent" value="tab3">
+                    <DoctorReqeust />
                 </Tabs.Content>
             </Tabs.Root>
         </div>

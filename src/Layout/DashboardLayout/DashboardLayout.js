@@ -22,8 +22,35 @@ const DashboardLayout = () => {
   const [isUser] = useUsers(user?.email);
   const [isRequest] = useRequest(user?.email);
 
+  const closeModal = (name) => {
+    // Get the modal element
+    const modal = document.getElementById(name);
+
+    // Hide the modal
+    modal.close();
+};
+
   const handleUpdateProfile = event => {
   }
+
+  const makeMeDoctor = () =>{
+    const url = `http://localhost:5000/users/update/request?email=${user?.email}`;
+    fetch(url, {
+            method: 'PUT',
+            headers: {
+                "content-type": "application/json"
+            }
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if(data.acknowledged){
+                    closeModal('doctor-modal');
+                    toast.success('Doctor Request Send Successfully!!')
+                    setDisabled(true);
+                }
+            })
+}
   
   return (
     <div>
@@ -60,11 +87,11 @@ const DashboardLayout = () => {
               </span>
                 {/* {
                   (!isAdmin && !isDoctor) &&
-                  <button className="btn btn-xs " onClick={() => document.getElementById('owner-modal').showModal()} >Doctor Request</button>
+                  <button className="btn btn-xs " onClick={() => document.getElementById('doctor-modal').showModal()} >Doctor Request</button>
                 } */}
                 {
                   (!isAdmin && !isDoctor && !isReception && !isRequest) &&
-                  <button className="btn btn-xs bg-gradient-to-r from-cyan-500 to-blue-500" onClick={() => document.getElementById('owner-modal').showModal()} disabled={disabled}>Doctor Request</button>
+                  <button className="btn btn-xs bg-gradient-to-r from-cyan-500 to-blue-500" onClick={() => document.getElementById('doctor-modal').showModal()} disabled={disabled}>Doctor Request</button>
                 }
 
               </p>
@@ -94,7 +121,7 @@ const DashboardLayout = () => {
                   <li><Link to='/dashboard/allusers'>Users List</Link></li>
                   <li><Link to='/dashboard/doctors'>Doctors</Link></li>
                   <li><Link to='/dashboard/products'>Products</Link></li>
-                  <li><Link to='/dashboard/products'>Doctor Request</Link></li>
+                  {/* <li><Link to='/dashboard/products'>Doctor Request</Link></li> */}
                   <li><Link to='/dashboard/confirmation'>Confirmation Zone</Link></li>
                 </>
               }
@@ -119,13 +146,13 @@ const DashboardLayout = () => {
       </dialog>
 
       {/* doctor request modal  */}
-      <dialog id="owner-modal" className="modal">
+      <dialog id="doctor-modal" className="modal">
         <div className="modal-box">
           <form method="dialog">
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
           </form>
           <h2 className="text-xl font-semibold mt-5 text-center">Do you really want to send a request for make you doctor!!</h2>
-          <p className='text-right'><button className="btn btn-outline btn-primary mt-5">Request</button></p>
+          <p className='text-right'><button onClick={makeMeDoctor} className="btn btn-outline btn-primary mt-5">Request</button></p>
         </div>
       </dialog>
     </div>

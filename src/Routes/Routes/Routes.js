@@ -32,6 +32,7 @@ import CreateUser from "../../Pages/Dashboard/CreateUser/CreateUser";
 import Confirms from "../../Pages/Dashboard/Confirms/Confirms";
 import AddYouDoctor from "../../Pages/Dashboard/AddYouDoctor/AddYouDoctor";
 import MyPatient from "../../Pages/Dashboard/MyPatient/MyPatient";
+import DoctorReqeust from "../../Pages/Dashboard/DoctorReqeust/DoctorReqeust";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -141,6 +142,10 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/createdoctor',
                 element: <AddYouDoctor/>
+            },
+            {
+                path: '/dashboard/doctorRequest',
+                element: <DoctorReqeust/>
             },
             {
                 path: '/dashboard/patients',
