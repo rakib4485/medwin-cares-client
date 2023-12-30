@@ -5,7 +5,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
-  const { names: treatmentName, slots, prices, meet } = treatment; 
+  const { names: treatmentName, slots, prices, meet, email: doctorEmail } = treatment; 
   const date = format(selectedDate, 'PP');
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -23,9 +23,10 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
       patient: name,
       slot,
       email,
+      doctorEmail,
       phone,
       prices,
-      meet
+      meet, 
     }
 
     fetch('https://medwin-cares-server-two.vercel.app/bookings', {
@@ -57,6 +58,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
         <div className="modal-box relative">
           <label htmlFor="booking-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
           <h3 className="text-lg font-bold">{treatmentName}</h3>
+          <p>{doctorEmail}</p>
           <form onSubmit={handleBooking} className='grid grid-cols-1 gap-3 mt-10'>
             <input type="text" value={date} disabled className="input input-bordered w-full" />
             <select name='slot' className="select select-bordered w-full">

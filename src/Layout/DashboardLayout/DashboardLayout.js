@@ -10,6 +10,7 @@ import useRequest from '../../hooks/useRequest/useRequest';
 import { useForm } from 'react-hook-form';
 import useReception from '../../hooks/useReception/useReception';
 import useUsers from '../../hooks/UseUsers/UseUsers';
+import toast from 'react-hot-toast';
 
 const DashboardLayout = () => {
   const { register, formState: { errors }, handleSubmit } = useForm();
@@ -21,6 +22,9 @@ const DashboardLayout = () => {
   const [isUser] = useUsers(user?.email);
   const [isRequest] = useRequest(user?.email);
 
+  const handleUpdateProfile = event => {
+  }
+  
   return (
     <div>
       <Navbar></Navbar>
@@ -45,7 +49,9 @@ const DashboardLayout = () => {
                       <FaUserAlt className='text-[65px] ml-2 mt-4' />
                   }
                 </div>
-                <MdEdit className='text-center text-2xl cursor-pointer z-[50]' onClick={() => document.getElementById('image-modal').showModal()} />
+                {(!isAdmin && !isDoctor) &&
+                  <MdEdit className='text-center text-2xl cursor-pointer z-[50]' onClick={() => document.getElementById('image-modal').showModal()} disabled={disabled} />
+                }
               </div>
               <h3 className={`text-lg font-semibold  text-center ${user?.displayName.length > 15 && 'tooltip'}`} data-tip={`${user?.displayName}`}>{user.displayName}</h3>
               <p className='flex gap-3 justify-center items-center text-lg font-semibold'><span>Type : {
@@ -57,30 +63,30 @@ const DashboardLayout = () => {
                   <button className="btn btn-xs " onClick={() => document.getElementById('owner-modal').showModal()} >Doctor Request</button>
                 } */}
                 {
-                                (!isAdmin && !isDoctor && !isRequest) &&
-                                <button className="btn btn-xs bg-gradient-to-r from-cyan-500 to-blue-500" onClick={() => document.getElementById('owner-modal').showModal()} disabled={disabled}>Doctor Request</button>
-                            }
+                  (!isAdmin && !isDoctor && !isReception && !isRequest) &&
+                  <button className="btn btn-xs bg-gradient-to-r from-cyan-500 to-blue-500" onClick={() => document.getElementById('owner-modal').showModal()} disabled={disabled}>Doctor Request</button>
+                }
 
               </p>
             </div>
             <div className='text-lg'>
               {
                 isUser && <>
-                <li><Link to='/dashboard'>My Appointment</Link></li>
-                <li><Link to='/dashboard/myorders'>My Orders</Link></li>
+                  <li><Link to='/dashboard'>My Appointment</Link></li>
+                  <li><Link to='/dashboard/myorders'>My Orders</Link></li>
                 </>
               }
-              
+
 
               {
                 isDoctor && <>
-                <li><Link to=''>My Patients</Link></li>
-                <li><Link to='/dashboard/adddoctor'>Create profile</Link></li>
+                  <li><Link to='/dashboard/patients'>My Patients</Link></li>
+                  <li><Link to='/dashboard/createdoctor'>Create profile</Link></li>
                 </>
               }
               {
                 isReception && <>
-                <li><Link to='/dashboard/createuser'>Create User</Link></li>
+                  <li><Link to='/dashboard/createuser'>Create User</Link></li>
                 </>
               }
               {
@@ -98,42 +104,14 @@ const DashboardLayout = () => {
 
         </div>
       </div>
+      {/* Update Profile modal  */}
       <dialog id="image-modal" className="modal">
         <div className="modal-box">
-          <h1 className='text-2xl font-semibold'>Update your profile</h1>
-          <form method="dialog">
-            {/* if there is a button in form, it will close the modal */}
+          <h1 className='text-2xl font-semibold mb-2'>Update your profile</h1>
+          <form method="dialog" onSubmit={handleUpdateProfile}>
             <button className="btn btn-sm btn-circle btn-ghost absolute right-2 top-2">✕</button>
-          </form>
-          <form>
-            <div className="form-control w-full">
-              <label className="label"><span className="label-text">Name</span></label>
-              <input {...register("name", { required: "Name is required" })} defaultValue={user?.displayName} disabled type="text" className="input input-bordered w-full" />
-              {errors.name && <p className='text-red-600'>{errors.name?.message}</p>}
-            </div>
-            <div className="form-control w-full">
-              <label className="label"><span className="label-text">Email</span></label>
-              <input {...register("email", { required: "email is required" })} defaultValue={user?.email} disabled type="text" className="input input-bordered w-full" />
-              {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
-            </div>
-            <div className="form-control w-full">
-              <label className="label"><span className="label-text">Phone Number</span></label>
-              <input {...register("phone", { required: "phone is required" })} type="text" className="input input-bordered w-full" />
-              {errors.phone && <p className='text-red-600'>{errors.phone?.message}</p>}
-            </div>
-            <div className="form-control w-full">
-              <label className="label"><span className="label-text">NID number / Birth certificate number / Passport Number</span></label>
-              <input {...register("phone", { required: "phone is required" })} type="text" className="input input-bordered w-full" />
-              {errors.phone && <p className='text-red-600'>{errors.phone?.message}</p>}
-            </div>
-            <div className="form-control w-full">
-              <label className="label"><span className="label-text">Medical History</span></label>
-              <textarea {...register("medical", { required: "Medical history is required" })} className="textarea textarea-primary w-full" />
-              {errors.medical && <p className='text-red-600'>{errors.medical?.message}</p>}
-            </div>
-            <div className=" w-full">
-              <label className="label"><span className="label-text">Choose Image</span></label>
-             <input type="file" src="" alt="" />
+            <div>
+              <textarea name="medical" placeholder='Write down your previous medical history...' id="" className='textarea textarea-primary w-full' rows="5"></textarea>
             </div>
             <p className='text-right mt-3'><input className='bg-black px-4 py-2 text-white cursor-pointer' type="submit" /></p>
           </form>

@@ -30,6 +30,8 @@ import BkashPayment from "../../Pages/Dashboard/BkashPayment/BkashPayment";
 import ConfirmOrders from "../../Pages/Dashboard/ConfirmOrders/ConfirmOrders";
 import CreateUser from "../../Pages/Dashboard/CreateUser/CreateUser";
 import Confirms from "../../Pages/Dashboard/Confirms/Confirms";
+import AddYouDoctor from "../../Pages/Dashboard/AddYouDoctor/AddYouDoctor";
+import MyPatient from "../../Pages/Dashboard/MyPatient/MyPatient";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -135,6 +137,14 @@ const router = createBrowserRouter([
             {
                 path: '/dashboard/createuser',
                 element: <PrivateRoute><CreateUser/></PrivateRoute>
+            },
+            {
+                path: '/dashboard/createdoctor',
+                element: <AddYouDoctor/>
+            },
+            {
+                path: '/dashboard/patients',
+                element: <MyPatient/>
             },
             {
                 path: '/dashboard/confirmpayment',

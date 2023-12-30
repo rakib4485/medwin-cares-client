@@ -30,7 +30,7 @@ const SignUp = () => {
         }
         updateUser(userInfo)
           .then(() => {
-            saveUser(data.name, data.email);
+            saveUser(data.name, data.email, data.nid);
           })
           .catch(err => console.log(err));
       })
@@ -54,8 +54,8 @@ const SignUp = () => {
     })
 }
 
-  const saveUser = (name, email) => {
-    const user = { name, email };
+  const saveUser = (name, email, nid) => {
+    const user = { name, email, nid };
     fetch('https://medwin-cares-server-two.vercel.app/users', {
       method: 'POST',
       headers: {
@@ -91,6 +91,11 @@ const SignUp = () => {
                 <label className="label"><span className="label-text">Email</span></label>
                 <input {...register("email", { required: "Email Address is required" })} type="text" className="input input-bordered w-full max-w-xs" />
                 {errors.email && <p className='text-red-600'>{errors.email?.message}</p>}
+              </div>
+              <div className="form-control w-full max-w-xs">
+                <label className="label"><span className="label-text">NID Number / Birth Certificate Number / Passport Number</span></label>
+                <input {...register("nid", { required: "NID Number / Birth Certificate Number / Passport Number is required" })} type="text" className="input input-bordered w-full max-w-xs" />
+                {errors.nid && <p className='text-red-600'>{errors.nid?.message}</p>}
               </div>
               <div className="form-control w-full max-w-xs">
                 <label className="label"><span className="label-text">Password</span></label>
