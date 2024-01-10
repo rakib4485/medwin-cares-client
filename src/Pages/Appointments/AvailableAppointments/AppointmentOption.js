@@ -13,7 +13,7 @@ const AppointmentOption = ({ appointmentOption, setTreatment }) => {
         <div className="card-body text-center">
           <h2 className="text-2xl font-bold  text-secondary">{names}</h2>
           <p>{name}</p>
-          <h3 className="text-red-600">{email}</h3>
+          {/* <h3 className="text-red-600">{email}</h3> */}
           <p>{slots.length > 0 ? slots[0] : "Try another day"}</p>
           <p>
             {slots.length} {slots.length > 1 ? "spaces" : "space"} Available

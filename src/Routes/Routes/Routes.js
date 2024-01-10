@@ -33,6 +33,7 @@ import Confirms from "../../Pages/Dashboard/Confirms/Confirms";
 import AddYouDoctor from "../../Pages/Dashboard/AddYouDoctor/AddYouDoctor";
 import MyPatient from "../../Pages/Dashboard/MyPatient/MyPatient";
 import DoctorReqeust from "../../Pages/Dashboard/DoctorReqeust/DoctorReqeust";
+import ShopPayment from "../../Pages/ShopPayment/ShopPayment";
 const router = createBrowserRouter([
     {
         path: '/',
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
             {
                 path: '/shop',
                 element: <Shop/>
+            },
+            {
+                path: '/ShopPayment',
+                element: <ShopPayment/>
             },
             {
                 path: '/doctorDetails',

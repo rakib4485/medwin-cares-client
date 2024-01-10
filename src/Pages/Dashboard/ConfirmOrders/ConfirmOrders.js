@@ -16,8 +16,6 @@ const ConfirmOrders = () => {
         <th>Address</th>
         <th>Product Name</th>
         <th>Price</th>
-        <th>Delivery Type</th>
-        <th>Transaction Id</th>
         <th>Action</th>
       </tr>
     </thead>

@@ -49,7 +49,7 @@ const ShopCard = ({product}) => {
                     <p className=" text-base">{price} BDT</p>
                     <div className='flex gap-5 mt-4'>
                         <button className='bg-gradient-to-r from-violet-500 to-fuchsia-500 px-3 py-2 rounded-md text-white'>
-                            <Link>Buy Now</Link>
+                            <Link to='/ShopPayment'>Buy Now</Link>
                         </button>
                         <button className='bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-3 text-white rounded-md' onClick={handleCart}>Add to cart</button>
                     </div>
