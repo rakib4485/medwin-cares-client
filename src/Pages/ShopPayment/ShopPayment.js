@@ -1,20 +1,49 @@
 import React, { useContext } from 'react';
 import { useForm } from 'react-hook-form';
 import { AuthContext } from '../../context/AuthProvider';
+import { useLoaderData, useNavigate } from 'react-router-dom';
+import toast from 'react-hot-toast';
 
 const ShopPayment = () => {
+  const product = useLoaderData();
     const { register, formState: {errors}, handleSubmit } = useForm();
     const { user } = useContext(AuthContext);
+    const navigate = useNavigate()
 
     const handleOrder = data =>{
 
+      const order = {
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        address : data.address,
+        productName: product.name,
+        price: product.price
+      }
+      
+      fetch('http://localhost:5000/orders/', {
+        method: 'POST',
+        headers: {
+          'content-type': 'application/json',
+          authorization: `bearer ${localStorage.getItem('accessToken')}`
+        },
+        body: JSON.stringify(order)
+      })
+      .then(res => res.json())
+      .then(data => {
+        console.log(data)
+        if(data.acknowledged){
+          toast.success('Order Request send successfully');
+          navigate('/dashboard');
+        }
+      })
     }
     return (
         <div className='mx-5 my-5'>
             <h1 className='text-4xl'>Order Form</h1>
-            <p>Product Id</p>
-            <p>Product Name</p>
-            <p>Product Price</p>
+            <p>Product Id: {product._id}</p>
+            <p>Product Name: {product.name}</p>
+            <p>Product Price: {product.price} <strong>BDT</strong></p>
             <div>
             <form onSubmit={handleSubmit(handleOrder)}>
             <div className="form-control w-full max-w-xs">

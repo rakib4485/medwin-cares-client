@@ -57,8 +57,11 @@ const router = createBrowserRouter([
                 element: <Shop/>
             },
             {
-                path: '/ShopPayment',
-                element: <ShopPayment/>
+                path: '/ShopPayment/:id',
+                element: <ShopPayment/>,
+                loader: ({params}) => {
+                    return fetch (`http://localhost:5000/shop/${params.id}`);
+                }
             },
             {
                 path: '/doctorDetails',
