@@ -6,14 +6,14 @@ const ConfirmOrders = () => {
   const {data: orders = [], refetch} = useQuery({
     queryKey: ['order'],
     queryFn: async () => {
-      const res = await fetch('http://localhost:5000/orders/');
+      const res = await fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/orders/');
       const data = await res.json();
       return (data);
     }
   })
 
   const handleConfirm = id => {
-    fetch(`http://localhost:5000/orders/${id}`, {
+    fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/orders/${id}`, {
       method: 'PUT',
       headers: {
         'content-type': 'application/json'

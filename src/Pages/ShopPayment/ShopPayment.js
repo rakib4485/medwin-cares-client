@@ -21,7 +21,7 @@ const ShopPayment = () => {
         price: product.price
       }
       
-      fetch('http://localhost:5000/orders/', {
+      fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/orders/', {
         method: 'POST',
         headers: {
           'content-type': 'application/json',
@@ -39,9 +39,11 @@ const ShopPayment = () => {
       })
     }
     return (
-        <div className='mx-5 my-5'>
-            <h1 className='text-4xl'>Order Form</h1>
-            <p>Product Id: {product._id}</p>
+        <div className='bg-gray-300 p-7'>
+          <div className='w-96 p-7 shadow-lg bg-white rounded-md lg:mx-auto'>
+
+          <h1 className='text-4xl'>Order Form</h1>
+            {/* <p>Product Id: {product._id}</p> */}
             <p>Product Name: {product.name}</p>
             <p>Product Price: {product.price} <strong>BDT</strong></p>
             <div>
@@ -71,6 +73,7 @@ const ShopPayment = () => {
               {/* {loginError && <p className='text-red-600'>{loginError}</p>} */}
           </form>
             </div>
+          </div>
         </div>
     );
 };

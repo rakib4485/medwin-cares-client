@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 const MyPatient = () => {
     const {user} = useContext(AuthContext);
 
-    // const url = `http://localhost:5000/doctorBookings?email=${user?.email}`;
+    // const url = `https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/doctorBookings?email=${user?.email}`;
 
     // const { data: bookings = [], isLoading } = useQuery({
     //     queryKey: ['bookings', user?.email],
@@ -24,7 +24,7 @@ const MyPatient = () => {
     const {data: bookings = [], isLoading} = useQuery({
         queryKeyL: ['booking'],
         queryFn: async () => {
-            const res = await fetch(`http://localhost:5000/doctorBookings?email=${user?.email}`);
+            const res = await fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/doctorBookings?email=${user?.email}`);
             const data = await res.json();
             return data;
         }
@@ -45,7 +45,7 @@ const MyPatient = () => {
                             <th>Appointment Date</th>
                             <th>Appointment Slot</th>
                             <th>Appointment Type</th>
-                            <th>Prescription</th>
+                            {/* <th>Prescription</th> */}
                             <th>Meet Link</th>
                         </tr>
                     </thead>
@@ -57,7 +57,7 @@ const MyPatient = () => {
                                     <td>{booking.appointmentDate}</td>
                                     <td>{booking.slot}</td>
                                     <td>{booking?.paid === 'true' ? <span className="text-primary">Paid</span> : booking.paid}</td>
-                                    <td><p className="text-blue-700 cursor-pointer" onClick={() => document.getElementById('prescription-modal').showModal()}>Write Prescription</p></td>
+                                    {/* <td><p className="text-blue-700 cursor-pointer" onClick={() => document.getElementById('prescription-modal').showModal()}>Write Prescription</p></td> */}
                                     <td>
                                     {/* {booking?.paid === 'true' ? <Link target='_blank' to={booking.meet} className="btn btn-primary btn-sm">join meet</Link> : booking.paid} */}
                                     <Link target='_blank' to={booking.meet} className={`btn btn-primary btn-sm `}>join meet</Link>

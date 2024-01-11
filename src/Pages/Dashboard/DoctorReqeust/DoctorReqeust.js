@@ -18,14 +18,14 @@ const DoctorReqeust = () => {
     const { data: users = [], refetch } = useQuery({
         queryKey: ['user'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/users');
+            const res = await fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/users');
             const data = await res.json();
             return data;
         }
     });
 
     const handleRole = () => {
-        const url = `http://localhost:5000/users/update/${role}?email=${requestEmail}`;
+        const url = `https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/users/update/${role}?email=${requestEmail}`;
         fetch(url, {
             method: 'PUT',
             headers: {

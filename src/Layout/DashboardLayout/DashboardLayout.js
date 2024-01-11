@@ -34,7 +34,7 @@ const DashboardLayout = () => {
   }
 
   const makeMeDoctor = () =>{
-    const url = `http://localhost:5000/users/update/request?email=${user?.email}`;
+    const url = `https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/users/update/request?email=${user?.email}`;
     fetch(url, {
             method: 'PUT',
             headers: {
@@ -76,9 +76,9 @@ const DashboardLayout = () => {
                       <FaUserAlt className='text-[65px] ml-2 mt-4' />
                   }
                 </div>
-                {(!isAdmin && !isDoctor) &&
+                {/* {(!isAdmin && !isDoctor) &&
                   <MdEdit className='text-center text-2xl cursor-pointer z-[50]' onClick={() => document.getElementById('image-modal').showModal()} disabled={disabled} />
-                }
+                } */}
               </div>
               <h3 className={`text-lg font-semibold  text-center ${user?.displayName.length > 15 && 'tooltip'}`} data-tip={`${user?.displayName}`}>{user.displayName}</h3>
               <p className='flex gap-3 justify-center items-center text-lg font-semibold'><span>Type : {

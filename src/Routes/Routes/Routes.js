@@ -58,9 +58,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/ShopPayment/:id',
-                element: <ShopPayment/>,
+                element: <PrivateRoute><ShopPayment/></PrivateRoute>,
                 loader: ({params}) => {
-                    return fetch (`http://localhost:5000/shop/${params.id}`);
+                    return fetch (`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/shop/${params.id}`);
                 }
             },
             {
