@@ -5,7 +5,7 @@ const useReception = email => {
     const [isReceptionLoading, setIsReceptionLoading] = useState(true);
     useEffect(() =>{
         if(email){
-            fetch(`http://localhost:5000/users/reception/${email}`)
+            fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/users/reception/${email}`)
             .then(res =>  res.json())
             .then(data =>{
                 console.log(data);

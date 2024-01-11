@@ -16,7 +16,7 @@ const ShopCard = ({product}) => {
             bookedEmail: user?.email
         }
 
-        fetch('http://localhost:5000/carts', {
+        fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/carts', {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -47,11 +47,11 @@ const ShopCard = ({product}) => {
                 <div className="px-6 py-4">
                     <h1 className="font-bold text-xl mb-2">{name}</h1>
                     <p className=" text-base">{price} BDT</p>
-                    <div className='flex gap-5 mt-4'>
+                    <div className='flex gap-5 mt-4 justify-end'>
                         <button className='bg-gradient-to-r from-violet-500 to-fuchsia-500 px-3 py-2 rounded-md text-white'>
-                            <Link to='/ShopPayment'>Buy Now</Link>
+                            <Link to={`/ShopPayment/${_id}`}>Buy Now</Link>
                         </button>
-                        <button className='bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-3 text-white rounded-md' onClick={handleCart}>Add to cart</button>
+                        {/* <button className='bg-gradient-to-r from-cyan-500 to-blue-500 px-3 py-3 text-white rounded-md' onClick={handleCart}>Add to cart</button> */}
                     </div>
                 </div>
             </div>

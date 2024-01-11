@@ -5,7 +5,7 @@ const useDoctor = email => {
     const [isDoctorLoading, setIsDoctorLoading] = useState(true);
     useEffect(() => {
         if (email) {
-            fetch(`http://localhost:5000/users/doctor/${email}`)
+            fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/users/doctor/${email}`)
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);

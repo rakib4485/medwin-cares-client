@@ -1,6 +1,17 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../../../context/AuthProvider';
+import { useQuery } from '@tanstack/react-query';
 
 const MyOrders = () => {
+  const {user} = useContext(AuthContext);
+  const {data: orders = [], isLoading} = useQuery({
+    queryKey: ['order'],
+    queryFn: async () => {
+      const res = await fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/myorders?email=${user?.email}`);
+      const data = await res.json();
+      return data;
+    }
+  })
     return (
         <div className='bg-gray-200 h-full p-5'>
            <h2 className="text-3xl">My Orders</h2>
@@ -18,31 +29,26 @@ const MyOrders = () => {
         <th>Product Name</th>
         <th>Price</th>
         <th>Delivery Type</th>
-        <th>Payment Status</th>
+        <th>Delivery Time</th>
       </tr>
     </thead>
     <tbody>
       {/* row 1 */}
-      <tr>
-        <th>1</th>
-        <td>Cy Ganderton</td>
-        <td>Quality Control Specialist</td>
-        <td>Blue</td>
-      </tr>
+      {
+        orders.map((order, i) => <tr key={order._id}>
+          <th>{i+1}</th>
+          <td>{order.name}</td>
+          <td>{order.phone}</td>
+          <td>{order.address}</td>
+          <td>{order.productName}</td>
+          <td>{order.price} <strong>BDT</strong></td>
+          <td>Cash On Delivery</td>
+          <td>{order.status ? <span className='text-primary'>Your Product Will be delivered within 24 Hours</span> : 'Pending...'}</td>
+        </tr>)
+      }
+      
       {/* row 2 */}
-      <tr className="hover">
-        <th>2</th>
-        <td>Hart Hagerty</td>
-        <td>Desktop Support Technician</td>
-        <td>Purple</td>
-      </tr>
-      {/* row 3 */}
-      <tr>
-        <th>3</th>
-        <td>Brice Swyre</td>
-        <td>Tax Accountant</td>
-        <td>Red</td>
-      </tr>
+      
     </tbody>
   </table>
 </div>

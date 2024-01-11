@@ -6,7 +6,7 @@ const BkashPayment = () => {
     const {data: bookings = [], refetch} = useQuery({
         queryKey: ['booking'],
         queryFn: async () => {
-            const res = await fetch('http://localhost:5000/allbookings',{
+            const res = await fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/allbookings',{
                 headers: {
                     'content-type': 'application/json',
                     authorization: `bearer ${localStorage.getItem('accessToken')}`
@@ -18,7 +18,7 @@ const BkashPayment = () => {
     })
 
     const handleReceived = (id) => {
-        fetch(`http://localhost:5000/payments?id=${id}`, {
+        fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/payments?id=${id}`, {
                 method: 'PUT',
                 headers: {
                     'content-type': 'application/json',
