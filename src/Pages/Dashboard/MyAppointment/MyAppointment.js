@@ -57,7 +57,7 @@ const MyAppointment = () => {
                                             <th>Doctor Name</th>
                                             <th>Date</th>
                                             <th>Time</th>
-                                            <th>Meet Link</th>
+                                            <th>Appointment Type</th>
                                             <th>Amount</th>
                                             <th>Payment</th>
                                         </tr>
@@ -72,7 +72,11 @@ const MyAppointment = () => {
                                                 <td>{booking.slot}</td>
                                                 <td>
                                                     {
-                                                        booking.prices && booking.paid && <p>{booking.meet}</p>
+                                                        booking.prices && booking.paid &&  <Link target='_blank' to={booking.meet} className={`btn btn-primary btn-sm `}>join meet</Link>
+
+                                                    }
+                                                    {
+                                                        booking.type === 'Offline' && <p>Offline</p>
                                                     }
                                                 </td>
                                                 <td>{booking.prices} BDT</td>

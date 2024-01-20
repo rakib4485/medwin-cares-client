@@ -11,7 +11,7 @@ const AvailableAppointments = ({selectedDate}) => {
 
     const {data:appointmentOptions=[], refetch, isLoading} = useQuery({
         queryKey: ['appointmentOptions', date],
-        queryFn: () => fetch(`https://medwin-cares-server-two.vercel.app/appointmentOptions?date=${date}`)
+        queryFn: () => fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/appointmentOptions?date=${date}`)
         .then(res => res.json())
     });
 

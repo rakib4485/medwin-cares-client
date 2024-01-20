@@ -5,7 +5,7 @@ import { AuthContext } from '../../../context/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
-  const { names: treatmentName, slots, prices, meet, email: doctorEmail } = treatment; 
+  const { names: treatmentName, slots, prices, meet, email: doctorEmail } = treatment;
   const date = format(selectedDate, 'PP');
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -14,6 +14,7 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
     event.preventDefault();
     const form = event.target;
     const slot = form.slot.value;
+    const type = form.type.value;
     const name = form.name.value;
     const email = form.email.value;
     const phone = form.phone.value;
@@ -22,11 +23,12 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
       treatment: treatmentName,
       patient: name,
       slot,
+      type,
       email,
       doctorEmail,
       phone,
       prices,
-      meet, 
+      meet,
     }
 
     fetch('https://medwin-cares-server-two.vercel.app/bookings', {
@@ -67,10 +69,15 @@ const BookingModal = ({ treatment, setTreatment, selectedDate, refetch }) => {
                 slots.map((slot, i) => <option value={slot} key={i}>{slot}</option>)
               }
             </select>
+            <select name="type" className="select select-bordered w-full">
+              <option disabled selected>Select Appointment Type</option>
+              <option>Online</option>
+              <option>Offline</option>
+            </select>
             <input name='name' type="text" defaultValue={user?.displayName} disabled placeholder="Full Name" className="input input-bordered w-full" />
             <input name='email' type="email" defaultValue={user?.email} disabled placeholder="Email" className="input input-bordered w-full" />
-            <input name='phone' type="text" defaultValue={user?.phone} placeholder="Phone Number"  className="input input-bordered w-full" />
-          <p className='text-red-500'> Note: You must have to complete the payment for confirm your appointment</p>
+            <input name='phone' type="text" defaultValue={user?.phone} placeholder="Phone Number" className="input input-bordered w-full" />
+            <p className='text-red-500'> Note: You must have to complete the payment for confirm your appointment</p>
             <input className='btn btn-accent w-full' type="submit" value="Submit" />
           </form>
         </div>
