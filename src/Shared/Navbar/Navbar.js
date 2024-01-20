@@ -81,7 +81,7 @@ export default function Index() {
                     <Link to='/dashboard' className='text-black'>My Dashboard</Link>
                   </li>
                   <li>
-                    <Link to='/wishlist' className='text-black'>WishList</Link>
+                    {/* <Link to='/wishlist' className='text-black'>WishList</Link> */}
                   </li>
                   <li className='text-center'>
                     <Link className='text-black text-center  px-5 py-3 font-semibold rounded' onClick={handleLogOut}>Log Out</Link>

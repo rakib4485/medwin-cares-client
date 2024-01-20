@@ -31,7 +31,7 @@ const AllUsers = () => {
   }
 
   const handleMakeReceptionist = id => {
-    fetch(`http://localhost:5000/users/reception/${id}`, {
+    fetch(`https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/users/reception/${id}`, {
       method: 'PUT',
       headers: {
         authorization: `bearer ${localStorage.getItem('accessToken')}`

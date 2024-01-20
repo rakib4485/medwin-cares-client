@@ -22,7 +22,7 @@ const ShopDetails = () => {
             </div>
             <div className='flex justify-center items-center'>
                 
-                <input type="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search by the name of the medicine" className="input input-bordered input-primary w-full max-w-xs" /> <span><FaSearch className='text-4xl bg-blue-400  px-2'/></span>
+                <input type="search" onChange={(e) => setSearch(e.target.value)} placeholder="Search by the name of the medicine.." className="input input-bordered input-primary w-full max-w-xs" /> 
                 
             </div>
             <div className="grid grid-cols-4">

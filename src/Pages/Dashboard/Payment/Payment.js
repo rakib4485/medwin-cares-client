@@ -24,7 +24,7 @@ const Payment = () => {
             email,
             bookingId: _id
         }
-        fetch('http://localhost:5000/payments?method=bkash', {
+        fetch('https://medwin-cares-server-bayaziddeveloper-gmailcom.vercel.app/payments?method=bkash', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
