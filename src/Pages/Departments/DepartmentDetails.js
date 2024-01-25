@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import intro from '../../assests/intro.jpg'
 import { HiArrowCircleRight } from 'react-icons/hi';
-import Booking from '../Home/Booking/Booking';
 
 const DepartmentDetails = () => {
     return (
@@ -71,7 +70,6 @@ const DepartmentDetails = () => {
                     </div>
                 </div>
             </div>
-                <Booking/>
         </div>
     );
 };

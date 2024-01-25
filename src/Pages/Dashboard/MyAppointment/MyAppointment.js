@@ -72,7 +72,7 @@ const MyAppointment = () => {
                                                 <td>{booking.slot}</td>
                                                 <td>
                                                     {
-                                                        booking.prices && booking.paid &&  <Link target='_blank' to={booking.meet} className={`btn btn-primary btn-sm `}>join meet</Link>
+                                                        booking.prices && booking.paid && booking.type === 'Online' &&  <Link target='_blank' to={booking.meet} className={`btn btn-primary btn-sm `}>join meet</Link>
 
                                                     }
                                                     {

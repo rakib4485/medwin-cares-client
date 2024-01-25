@@ -6,7 +6,6 @@ import Department from './Department/Department';
 import Choose from './Choose/Choose';
 import Specialist from './Specialist/Specialist';
 import Solution from './Solution/Solution';
-import Booking from './Booking/Booking';
 
 const Home = () => {
     return (
@@ -18,7 +17,6 @@ const Home = () => {
            <Choose/>
            <Specialist/>
            <Solution/>
-           <Booking/>
         </div>
     );
 };
