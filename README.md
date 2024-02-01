@@ -3,7 +3,7 @@
 
 
 
-[Live Site](https://medwin-cares-client.web.app/)
+[Live Site](https://medwin-cares-client-x3ro.vercel.app/)
 
 ## Documentation
 
